@@ -49,17 +49,16 @@ export default function SchedulePage() {
               FIRST TIME?
             </h3>
             <p className="font-body text-flow-muted text-sm leading-relaxed">
-              Arrive 10 minutes early for any class. We&apos;ll make sure you get
-              settled in with an instructor. Your first class is completely free —
-              no signup required.
+              Arriving a few minutes early for your first class is recommended.
+              Contact Flow MMA Academy with any questions before attending.
             </p>
           </div>
         </div>
       </section>
 
       <CTASection
-        headline="Come try a class."
-        subtext="All skill levels welcome. No commitment."
+        headline="Ready to start training?"
+        subtext="Contact Flow MMA Academy to get started."
         ctaLabel="Get Started"
       />
     </>

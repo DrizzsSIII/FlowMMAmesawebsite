@@ -10,7 +10,7 @@ export const metadata: Metadata = {
     template: "%s | Flow MMA Academy",
   },
   description:
-    "Train MMA, Brazilian Jiu-Jitsu, and Muay Thai in Mesa, AZ. Beginner-friendly classes and elite fighter development. Flow MMA Academy.",
+    "Flow MMA Academy offers MMA, Brazilian Jiu-Jitsu, Muay Thai, and Kids Classes in Mesa, AZ.",
   keywords: [
     "MMA gym Mesa AZ",
     "Jiu Jitsu Mesa",
@@ -23,7 +23,7 @@ export const metadata: Metadata = {
   ],
   openGraph: {
     title:       "Flow MMA Academy | MMA Gym Mesa AZ",
-    description: "Train MMA, BJJ, and Muay Thai in Mesa, AZ. Start your free trial at Flow MMA Academy.",
+    description: "Flow MMA Academy offers MMA, BJJ, and Muay Thai in Mesa, AZ.",
     url:         "https://www.flowmmaacademy.com",
     siteName:    "Flow MMA Academy",
     locale:      "en_US",

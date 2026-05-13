@@ -88,7 +88,7 @@ export default function Hero() {
           >
             Mixed Martial Arts Training in Mesa, Arizona.
             <br />
-            Beginner-friendly classes and serious fighter development.
+            Training in Brazilian Jiu-Jitsu, Muay Thai, and Mixed Martial Arts.
           </motion.p>
 
           {/* CTAs */}

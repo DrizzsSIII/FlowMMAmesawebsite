@@ -3,18 +3,18 @@ import ContactForm from "@/components/ContactForm";
 import PageHeader from "@/components/PageHeader";
 
 export const metadata: Metadata = {
-  title: "Contact — Start Your Free Trial",
+  title: "Contact — Flow MMA Academy",
   description:
-    "Contact Flow MMA Academy in Mesa, AZ to start your free trial class. Fill out the form and we'll get back to you the same day.",
+    "Contact Flow MMA Academy in Mesa, AZ. Fill out the form to get more information about our programs.",
 };
 
 export default function ContactPage() {
   return (
     <>
       <PageHeader
-        eyebrow="Get Started"
-        title="TRY A FREE CLASS"
-        description="Fill out the form and we'll reach out to schedule your first class. No experience needed. No obligation."
+        eyebrow="Get in Touch"
+        title="CONTACT US"
+        description="Fill out the form below and we'll get back to you with information about Flow MMA Academy's programs."
       />
 
       <section className="py-16 lg:py-20 bg-flow-black">

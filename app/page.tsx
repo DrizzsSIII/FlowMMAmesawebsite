@@ -14,35 +14,35 @@ export const metadata: Metadata = {
 const programs = [
   {
     title:       "Brazilian Jiu-Jitsu",
-    description: "Master the ground game with the most effective grappling system in the world — from white belt to submission specialist.",
+    description: "Learn grappling, submissions, and positional control in a structured class environment.",
     tags:        ["Submissions", "Guard", "Takedowns", "Gi & No-Gi"],
     href:        "/programs#bjj",
   },
   {
     title:       "Muay Thai",
-    description: "Learn the art of 8 limbs. Punches, kicks, elbows, and knees — become a disciplined stand-up fighter.",
+    description: "Develop striking skills including punches, kicks, elbows, and knees while improving conditioning and technique.",
     tags:        ["Striking", "Pad Work", "Clinch", "Conditioning"],
     href:        "/programs#muay-thai",
   },
   {
     title:       "Mixed Martial Arts",
-    description: "Develop a complete game. Strike, grapple, and dominate on your feet and on the ground.",
+    description: "Combine striking and grappling into a complete system designed for both competition and general training.",
     tags:        ["Striking", "Grappling", "Sparring", "All Levels"],
     href:        "/programs#mma",
   },
   {
     title:       "Kids Classes",
-    description: "Build confidence, discipline, and fitness in a safe, positive environment. Ages 5–15. No experience required.",
-    tags:        ["Ages 5–15", "Discipline", "Fun", "Beginner Friendly"],
+    description: "Classes focused on helping kids build confidence, discipline, and fitness in a structured and supportive setting.",
+    tags:        ["Kids", "Discipline", "Fitness", "All Levels"],
     href:        "/programs#kids",
   },
 ];
 
 const pillars = [
-  { title: "Elite Coaching",       desc: "Coaches with real competitive experience who know how to translate that into teaching." },
-  { title: "Tight Community",      desc: "More than a gym — a family. Beginners and pros train together with mutual respect." },
-  { title: "Clean Facility",       desc: "Well-maintained mats, bags, and equipment. You train hard; we take care of the rest." },
-  { title: "Fighter Development",  desc: "A structured path from your first class to competition, for those who want it." },
+  { title: "Coaching",              desc: "Coach information coming soon." },
+  { title: "Training Environment",  desc: "Flow MMA Academy focuses on a structured, supportive training environment." },
+  { title: "Facility Information",  desc: "Facility details coming soon." },
+  { title: "MMA Training",          desc: "Training includes Brazilian Jiu-Jitsu, Muay Thai, and Mixed Martial Arts." },
 ];
 
 export default function HomePage() {
@@ -82,8 +82,8 @@ export default function HomePage() {
       </section>
 
       <CTASection
-        headline="Your first class is free."
-        subtext="No experience needed. No commitment. Just show up."
+        headline="Ready to start training?"
+        subtext="Contact Flow MMA Academy to get started."
         ctaLabel="Get Started"
       />
 
@@ -160,7 +160,7 @@ export default function HomePage() {
 
       <CTASection
         headline="Start your training today."
-        subtext="One free class. No obligation. Just show up and see what we're about."
+        subtext="Contact Flow MMA Academy to get started."
         ctaLabel="Get Started"
       />
     </>

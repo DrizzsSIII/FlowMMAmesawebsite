@@ -13,16 +13,16 @@ const programs = [
   {
     id:      "bjj",
     title:   "Brazilian Jiu-Jitsu",
-    tagline: "Master the ground game",
+    tagline: "Grappling & Submissions",
     whoFor:  [
-      "Absolute beginners with no martial arts background",
+      "Beginners with no martial arts background",
       "Wrestlers or judoka looking to add submissions",
-      "Competitors pursuing BJJ tournaments",
+      "Those interested in grappling competition",
     ],
     learn: [
       "Guard passing and retention",
       "Joint locks and choke submissions",
-      "Positional hierarchy (mount, back, side control)",
+      "Positional control (mount, back, side control)",
       "Takedowns and trips",
     ],
     structure: [
@@ -31,20 +31,20 @@ const programs = [
       "Positional drilling — 15 min",
       "Live rolling — 20 min",
     ],
-    desc: "Brazilian Jiu-Jitsu is the ultimate equalizer — a system that lets a smaller person control and submit a larger, stronger opponent through leverage and technique. Our BJJ program runs both Gi and No-Gi tracks with structured curriculum from white belt to black belt.",
+    desc: "Brazilian Jiu-Jitsu classes at Flow MMA Academy focus on grappling, submissions, and positional control. Classes are structured for all skill levels in a consistent training environment.",
   },
   {
     id:      "muay-thai",
     title:   "Muay Thai",
-    tagline: "The art of 8 limbs",
+    tagline: "Stand-Up Striking",
     whoFor:  [
-      "Anyone wanting explosive striking skills",
+      "Anyone wanting to develop striking skills",
       "Boxers or kickboxers expanding their game",
-      "Athletes looking for elite conditioning",
+      "Athletes looking to improve conditioning",
     ],
     learn: [
       "Punches, elbows, kicks, and knees",
-      "Footwork and ring generalship",
+      "Footwork and movement",
       "Clinch fighting and sweeps",
       "Pad work and bag training",
     ],
@@ -54,22 +54,22 @@ const programs = [
       "Bag and partner drills — 15 min",
       "Sparring or clinch (optional) — 15 min",
     ],
-    desc: "Muay Thai is the striking backbone of MMA and one of the most battle-tested combat sports in the world. Our instructors teach authentic technique with an emphasis on footwork, timing, and power generation. Expect to be pushed hard.",
+    desc: "Muay Thai classes at Flow MMA Academy focus on striking technique using punches, kicks, elbows, and knees. Classes include pad work, bag training, and conditioning.",
   },
   {
     id:      "mma",
     title:   "Mixed Martial Arts",
-    tagline: "The complete combat sport",
+    tagline: "Striking & Grappling Combined",
     whoFor:  [
-      "Total beginners looking for a full-body challenge",
-      "Athletes wanting to add fighting skills",
-      "Competitors training for amateur bouts",
+      "Beginners looking for a full-body training program",
+      "Athletes wanting to develop fighting skills",
+      "Those training for competition",
     ],
     learn: [
       "Striking fundamentals (punches, kicks, elbows, knees)",
       "Takedowns and clinch wrestling",
-      "Ground-and-pound and submission defense",
-      "Live sparring and fight IQ",
+      "Ground work and submission defense",
+      "Live sparring (optional)",
     ],
     structure: [
       "Warmup & conditioning — 15 min",
@@ -77,30 +77,30 @@ const programs = [
       "Situational training — 15 min",
       "Live sparring (optional) — 20 min",
     ],
-    desc: "MMA is the most complete form of combat sports training. Our program weaves together striking, wrestling, and ground game into a seamless system. Whether you're preparing for competition or just want the most well-rounded training available, this is it.",
+    desc: "MMA classes at Flow MMA Academy combine striking and grappling into a structured training program. Classes are open to all skill levels.",
   },
   {
     id:      "kids",
     title:   "Kids Classes",
-    tagline: "Building champions for life",
+    tagline: "Martial Arts for Kids",
     whoFor:  [
-      "Kids ages 5–15 with no experience",
-      "Children seeking confidence and discipline",
-      "Young athletes wanting structured activity",
+      "Children with no prior martial arts experience",
+      "Kids looking for structure and physical activity",
+      "Young athletes in a supervised training environment",
     ],
     learn: [
-      "Basic strikes and self-defense",
+      "Basic strikes and movement",
       "Takedowns and safe grappling",
-      "Listening, focus, and respect",
+      "Focus, listening, and respect",
       "Physical fitness and coordination",
     ],
     structure: [
       "Games & warmup — 10 min",
       "Technique instruction — 20 min",
       "Drills and games — 20 min",
-      "Cool-down and character lesson — 10 min",
+      "Cool-down — 10 min",
     ],
-    desc: "Our Kids program is built around three things: safety, fun, and real martial arts development. Children learn fundamentals in an age-appropriate, positive environment. The discipline built here carries over into school, sports, and life.",
+    desc: "Kids classes at Flow MMA Academy focus on helping children build confidence, discipline, and fitness in a structured and supportive setting.",
   },
 ];
 
@@ -165,7 +165,7 @@ export default function ProgramsPage() {
                   href="/contact"
                   className="inline-flex items-center px-7 py-3.5 bg-flow-orange hover:bg-flow-orange-hover text-flow-black font-body font-bold uppercase tracking-wider text-sm rounded-sm transition-all duration-150 shadow-orange hover:shadow-orange-lg"
                 >
-                  Start Free Trial
+                  Get Started
                 </Link>
               </div>
 
@@ -196,8 +196,8 @@ export default function ProgramsPage() {
 
       <CTASection
         headline="Find your program."
-        subtext="Come in for a free class and try any of our programs risk-free."
-        ctaLabel="Book Free Trial"
+        subtext="Contact Flow MMA Academy to get started."
+        ctaLabel="Get Started"
       />
     </>
   );

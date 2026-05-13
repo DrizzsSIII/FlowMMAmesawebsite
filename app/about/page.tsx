@@ -33,7 +33,7 @@ export default function AboutPage() {
       <PageHeader
         eyebrow="Our Story"
         title="ABOUT FLOW MMA"
-        description="Built for everyone — from first-timers to competitive fighters. Mesa's home for serious martial arts in a welcoming, ego-free environment."
+        description="Flow MMA Academy offers MMA, BJJ, Muay Thai, and Kids Classes in Mesa, Arizona."
       />
 
       {/* Story */}
@@ -46,19 +46,14 @@ export default function AboutPage() {
             </h2>
             <div className="flex flex-col gap-5 font-body text-flow-muted text-base leading-relaxed">
               <p>
-                Flow MMA Academy was built on a simple idea: that world-class
-                martial arts training and a genuinely welcoming community aren&apos;t
-                mutually exclusive. You can have both under one roof.
+                Flow MMA Academy offers martial arts training in Mesa, Arizona.
+                Classes are available in MMA, Brazilian Jiu-Jitsu, Muay Thai,
+                and Kids programs.
               </p>
               <p>
-                Whether you&apos;re stepping on the mat for the very first time or
-                preparing for your next amateur bout, you&apos;ll find the coaching,
-                the training partners, and the environment here to reach your goals.
-              </p>
-              <p>
-                We train MMA, Brazilian Jiu-Jitsu, Muay Thai, and Kids Classes in
-                Mesa, Arizona. Every program is taught by instructors who bring real
-                experience and genuine care to every class.
+                Flow MMA Academy provides structured martial arts instruction in
+                Mesa, Arizona. Programs include MMA, Brazilian Jiu-Jitsu, Muay Thai,
+                and Kids Classes for all skill levels.
               </p>
             </div>
           </div>
@@ -96,7 +91,7 @@ export default function AboutPage() {
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="mb-10">
             <p className="font-body font-semibold text-flow-teal uppercase tracking-widest text-sm mb-3">
-              World-Class Instruction
+              Instruction
             </p>
             <div className="w-10 h-0.5 bg-gradient-to-r from-flow-orange to-flow-sunset mb-4" />
             <h2 className="font-display text-4xl lg:text-5xl text-flow-cream leading-tight">
@@ -113,8 +108,8 @@ export default function AboutPage() {
 
       <CTASection
         headline="Come train with us."
-        subtext="Your first class is free. See what Flow MMA is all about."
-        ctaLabel="Book Free Trial"
+        subtext="Contact Flow MMA Academy to get started."
+        ctaLabel="Get Started"
       />
     </>
   );
