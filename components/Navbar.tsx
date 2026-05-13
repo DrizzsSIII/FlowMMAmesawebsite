@@ -38,22 +38,14 @@ export default function Navbar() {
       <nav className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-16 lg:h-20">
 
         {/* Logo */}
-        <Link href="/" className="flex items-center gap-3 shrink-0 group">
+        <Link href="/" className="flex items-center shrink-0 group">
           <Image
-            src="/images/logo.png"
+            src="/images/flow-logo-dark.png"
             alt="Flow MMA Academy"
-            width={48}
-            height={48}
-            className="w-10 h-10 lg:w-12 lg:h-12 object-contain drop-shadow-[0_2px_8px_rgba(232,137,10,0.4)] group-hover:drop-shadow-[0_2px_12px_rgba(232,137,10,0.6)] transition-all duration-200"
+            width={64}
+            height={64}
+            className="w-12 h-12 lg:w-14 lg:h-14 object-contain [mix-blend-mode:lighten] drop-shadow-[0_2px_8px_rgba(232,137,10,0.4)] group-hover:drop-shadow-[0_2px_14px_rgba(232,137,10,0.65)] transition-all duration-200"
           />
-          <div className="hidden sm:block">
-            <span className="font-display text-xl lg:text-2xl text-flow-cream leading-none block">
-              FLOW
-            </span>
-            <span className="font-body font-semibold text-[10px] uppercase tracking-widest text-flow-muted leading-none block">
-              MMA Academy
-            </span>
-          </div>
         </Link>
 
         {/* Desktop links */}

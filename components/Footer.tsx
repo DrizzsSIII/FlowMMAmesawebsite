@@ -26,22 +26,14 @@ export default function Footer() {
 
           {/* Brand */}
           <div className="sm:col-span-2">
-            <Link href="/" className="inline-flex items-center gap-3 mb-5 group">
+            <Link href="/" className="inline-flex items-center mb-5 group">
               <Image
-                src="/images/logo.png"
+                src="/images/flow-logo-dark.png"
                 alt="Flow MMA Academy"
-                width={52}
-                height={52}
-                className="w-12 h-12 object-contain drop-shadow-[0_2px_10px_rgba(232,137,10,0.35)] group-hover:drop-shadow-[0_2px_16px_rgba(232,137,10,0.55)] transition-all duration-200"
+                width={80}
+                height={80}
+                className="w-16 h-16 object-contain [mix-blend-mode:lighten] drop-shadow-[0_2px_10px_rgba(232,137,10,0.35)] group-hover:drop-shadow-[0_2px_18px_rgba(232,137,10,0.58)] transition-all duration-200"
               />
-              <div>
-                <span className="font-display text-2xl text-flow-cream block leading-tight">
-                  FLOW
-                </span>
-                <span className="font-body font-semibold text-[10px] uppercase tracking-widest text-flow-muted block">
-                  MMA Academy
-                </span>
-              </div>
             </Link>
             <p className="font-body text-flow-muted text-sm leading-relaxed max-w-xs">
               Mixed Martial Arts training in Mesa, Arizona.

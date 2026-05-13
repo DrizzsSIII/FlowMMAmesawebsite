@@ -22,14 +22,14 @@ export default function SchedulePage() {
       <section className="py-16 lg:py-20 bg-flow-black">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Branded frame — orange outer, teal inner glow */}
-          <div className="relative rounded-sm overflow-hidden border border-flow-orange/30 shadow-[0_8px_64px_rgba(232,137,10,0.15),0_0_0_1px_rgba(22,199,217,0.10),0_0_80px_rgba(22,199,217,0.05)]">
+          <div className="relative rounded-sm overflow-hidden border border-flow-orange/30 shadow-[0_8px_64px_rgba(232,137,10,0.18),0_0_0_1px_rgba(22,199,217,0.10),0_0_80px_rgba(22,199,217,0.06)]">
             {/* Subtle top accent bar */}
             <div className="absolute top-0 left-0 right-0 h-0.5 bg-gradient-to-r from-flow-orange via-flow-teal to-flow-orange z-10" />
             <Image
-              src="/images/schedule.png"
+              src="/images/flow-schedule-branded.png"
               alt="Flow MMA Academy weekly class schedule"
               width={1200}
-              height={800}
+              height={641}
               className="w-full h-auto"
               priority
             />

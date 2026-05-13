@@ -143,12 +143,13 @@ export default function HomePage() {
           </div>
 
           {/* Schedule image with branded frame */}
-          <div className="relative rounded-sm overflow-hidden border border-flow-orange/25 shadow-[0_8px_48px_rgba(232,137,10,0.12),0_0_0_1px_rgba(22,199,217,0.08)]">
+          <div className="relative rounded-sm overflow-hidden border border-flow-orange/30 shadow-[0_8px_48px_rgba(232,137,10,0.18),0_0_0_1px_rgba(22,199,217,0.10)]">
+            <div className="absolute top-0 left-0 right-0 h-0.5 bg-gradient-to-r from-flow-orange via-flow-teal to-flow-orange z-10" />
             <Image
-              src="/images/schedule.png"
+              src="/images/flow-schedule-branded.png"
               alt="Flow MMA Academy weekly class schedule"
               width={1200}
-              height={700}
+              height={641}
               className="w-full h-auto"
             />
           </div>

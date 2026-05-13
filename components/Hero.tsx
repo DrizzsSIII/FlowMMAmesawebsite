@@ -42,11 +42,11 @@ export default function Hero() {
             className="mb-8"
           >
             <Image
-              src="/images/logo.png"
+              src="/images/flow-logo-dark.png"
               alt="Flow MMA Academy"
-              width={96}
-              height={96}
-              className="w-20 h-20 lg:w-24 lg:h-24 object-contain drop-shadow-[0_4px_20px_rgba(232,137,10,0.5)]"
+              width={160}
+              height={160}
+              className="w-32 h-32 lg:w-40 lg:h-40 object-contain [mix-blend-mode:lighten] drop-shadow-[0_6px_32px_rgba(232,137,10,0.55)]"
               priority
             />
           </motion.div>
