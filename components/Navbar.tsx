@@ -2,7 +2,6 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
-import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 
@@ -37,15 +36,13 @@ export default function Navbar() {
     >
       <nav className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-16 lg:h-20">
 
-        {/* Logo */}
+        {/* Logo — mix-blend-mode:screen makes the black background invisible on dark surfaces */}
         <Link href="/" className="shrink-0 group" aria-label="Flow MMA Academy home">
-          <Image
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
             src="/images/flow-logo-transparent.png"
             alt="Flow MMA Academy"
-            width={160}
-            height={160}
-            priority
-            className="h-14 lg:h-16 w-auto object-contain drop-shadow-[0_0_12px_rgba(22,199,217,0.30)] group-hover:drop-shadow-[0_0_18px_rgba(232,137,10,0.50)] transition-all duration-200"
+            className="h-14 lg:h-16 w-auto object-contain [mix-blend-mode:screen] group-hover:brightness-110 transition-all duration-200"
           />
         </Link>
 

@@ -1,5 +1,4 @@
 import Link from "next/link";
-import Image from "next/image";
 
 const navLinks = [
   { label: "Programs", href: "/programs" },
@@ -27,12 +26,11 @@ export default function Footer() {
           {/* Brand */}
           <div className="sm:col-span-2">
             <Link href="/" className="inline-block mb-5 group" aria-label="Flow MMA Academy home">
-              <Image
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
                 src="/images/flow-logo-transparent.png"
                 alt="Flow MMA Academy"
-                width={120}
-                height={120}
-                className="h-14 w-auto object-contain drop-shadow-[0_0_10px_rgba(22,199,217,0.25)] group-hover:drop-shadow-[0_0_16px_rgba(232,137,10,0.45)] transition-all duration-200"
+                className="h-14 w-auto object-contain [mix-blend-mode:screen] group-hover:brightness-110 transition-all duration-200"
               />
             </Link>
             <p className="font-body text-flow-muted text-sm leading-relaxed max-w-xs">
