@@ -5,25 +5,25 @@ import PageHeader from "@/components/PageHeader";
 export const metadata: Metadata = {
   title: "About — Flow MMA Academy",
   description:
-    "Learn about Flow MMA Academy's training philosophy and community. Mesa's premier MMA gym dedicated to every athlete's growth.",
+    "Learn about Flow MMA Academy's training philosophy and community. Mesa's premier MMA gym for all skill levels.",
 };
 
 const values = [
   {
     title: "Technique First",
-    desc: "We never skip the fundamentals. Deep technical knowledge is what separates average fighters from great ones.",
+    desc:  "We never skip the fundamentals. Deep technical knowledge is what separates average fighters from great ones.",
   },
   {
     title: "Earn It",
-    desc: "No shortcuts. Every belt, every skill, every improvement is earned through hard work on the mat.",
+    desc:  "No shortcuts. Every belt, every skill, every improvement is earned through hard work on the mat.",
   },
   {
     title: "Elevate Each Other",
-    desc: "Your training partners are your biggest asset. We push each other in training so we can grow together.",
+    desc:  "Your training partners are your biggest asset. We push each other in training so we can grow together.",
   },
   {
     title: "Family Atmosphere",
-    desc: "We don't tolerate ego or disrespect. Every person who walks in is treated with dignity regardless of experience.",
+    desc:  "We don't tolerate ego or disrespect. Every person who walks in is treated with dignity regardless of experience.",
   },
 ];
 
@@ -32,19 +32,19 @@ export default function AboutPage() {
     <>
       <PageHeader
         eyebrow="Our Story"
-        title="About Flow MMA Academy"
-        description="Built for everyone — from first-timers to competitive fighters. Flow MMA is Mesa's home for serious martial arts in a welcoming, ego-free environment."
+        title="ABOUT FLOW MMA"
+        description="Built for everyone — from first-timers to competitive fighters. Mesa's home for serious martial arts in a welcoming, ego-free environment."
       />
 
       {/* Story */}
-      <section className="py-20 lg:py-24 bg-[#0A0A0A]">
+      <section className="py-20 lg:py-24 bg-flow-black">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl">
-            <div className="w-8 h-px bg-brand-red mb-8" />
-            <h2 className="font-display font-black text-3xl lg:text-4xl uppercase tracking-tightest text-white leading-none mb-8">
-              About Flow MMA
+            <div className="w-10 h-0.5 bg-gradient-to-r from-flow-orange to-flow-sunset mb-8" />
+            <h2 className="font-display text-3xl lg:text-4xl text-flow-cream leading-tight mb-8">
+              ABOUT FLOW MMA
             </h2>
-            <div className="flex flex-col gap-5 text-white/60 text-base leading-relaxed">
+            <div className="flex flex-col gap-5 font-body text-flow-muted text-base leading-relaxed">
               <p>
                 Flow MMA Academy was built on a simple idea: that world-class
                 martial arts training and a genuinely welcoming community aren&apos;t
@@ -56,9 +56,9 @@ export default function AboutPage() {
                 the training partners, and the environment here to reach your goals.
               </p>
               <p>
-                We train MMA, Brazilian Jiu-Jitsu, Muay Thai, and Kids Classes.
-                Every program is taught by instructors who bring real experience and
-                genuine care to every class.
+                We train MMA, Brazilian Jiu-Jitsu, Muay Thai, and Kids Classes in
+                Mesa, Arizona. Every program is taught by instructors who bring real
+                experience and genuine care to every class.
               </p>
             </div>
           </div>
@@ -66,27 +66,25 @@ export default function AboutPage() {
       </section>
 
       {/* Philosophy */}
-      <section className="py-20 lg:py-24 bg-[#0D0D0D] border-t border-white/8">
+      <section className="py-20 lg:py-24 bg-flow-dark border-t border-white/8">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="mb-12">
-            <p className="font-display font-semibold text-brand-red uppercase tracking-widest text-sm mb-3">
+            <p className="font-body font-semibold text-flow-teal uppercase tracking-widest text-sm mb-3">
               What We Stand For
             </p>
-            <h2 className="font-display font-black text-4xl lg:text-5xl uppercase tracking-tightest text-white leading-none">
-              Our Philosophy
+            <div className="w-10 h-0.5 bg-gradient-to-r from-flow-orange to-flow-sunset mb-4" />
+            <h2 className="font-display text-4xl lg:text-5xl text-flow-cream leading-tight">
+              OUR PHILOSOPHY
             </h2>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
             {values.map((v) => (
-              <div
-                key={v.title}
-                className="bg-[#141414] border border-white/8 rounded-sm p-6"
-              >
-                <div className="w-6 h-px bg-brand-red mb-5" />
-                <h3 className="font-display font-black text-xl uppercase tracking-tight text-white mb-2">
-                  {v.title}
+              <div key={v.title} className="bg-flow-card border border-white/8 rounded-sm p-6 hover:border-flow-teal/30 transition-colors duration-200">
+                <div className="w-8 h-0.5 bg-gradient-to-r from-flow-orange to-flow-teal mb-5" />
+                <h3 className="font-display text-xl text-flow-orange leading-tight mb-2">
+                  {v.title.toUpperCase()}
                 </h3>
-                <p className="text-white/55 text-sm leading-relaxed">{v.desc}</p>
+                <p className="font-body text-flow-muted text-sm leading-relaxed">{v.desc}</p>
               </div>
             ))}
           </div>
@@ -94,18 +92,19 @@ export default function AboutPage() {
       </section>
 
       {/* Coaches */}
-      <section className="py-20 lg:py-24 bg-[#0A0A0A] border-t border-white/8">
+      <section className="py-20 lg:py-24 bg-flow-black border-t border-white/8">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="mb-10">
-            <p className="font-display font-semibold text-brand-red uppercase tracking-widest text-sm mb-3">
+            <p className="font-body font-semibold text-flow-teal uppercase tracking-widest text-sm mb-3">
               World-Class Instruction
             </p>
-            <h2 className="font-display font-black text-4xl lg:text-5xl uppercase tracking-tightest text-white leading-none">
-              Meet the Coaches
+            <div className="w-10 h-0.5 bg-gradient-to-r from-flow-orange to-flow-sunset mb-4" />
+            <h2 className="font-display text-4xl lg:text-5xl text-flow-cream leading-tight">
+              MEET THE COACHES
             </h2>
           </div>
-          <div className="bg-[#141414] border border-white/8 rounded-sm p-8 max-w-lg">
-            <p className="text-white/45 text-sm leading-relaxed font-body">
+          <div className="bg-flow-card border border-flow-teal/20 rounded-sm p-8 max-w-lg">
+            <p className="font-body text-flow-muted/60 text-sm leading-relaxed">
               Coach profiles coming soon.
             </p>
           </div>

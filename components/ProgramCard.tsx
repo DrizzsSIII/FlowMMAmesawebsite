@@ -4,11 +4,11 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 
 interface ProgramCardProps {
-  title: string;
+  title:       string;
   description: string;
-  tags: string[];
-  href: string;
-  index?: number;
+  tags:        string[];
+  href:        string;
+  index?:      number;
 }
 
 export default function ProgramCard({
@@ -27,25 +27,31 @@ export default function ProgramCard({
     >
       <Link
         href={href}
-        className="group flex flex-col h-full bg-[#141414] border border-white/8 rounded-sm p-6 hover:border-white/20 hover:shadow-[0_8px_40px_rgba(0,0,0,0.4)] transition-all duration-200"
+        className="group flex flex-col h-full bg-flow-card border border-white/8 rounded-sm p-6 hover:border-flow-teal/40 hover:shadow-[0_8px_40px_rgba(22,199,217,0.10)] transition-all duration-200"
       >
-        <h3 className="font-display font-black text-2xl uppercase tracking-tightest text-white mb-3 group-hover:text-brand-red transition-colors duration-150">
+        {/* Orange accent top bar */}
+        <div className="w-8 h-0.5 bg-gradient-to-r from-flow-orange to-flow-sunset mb-5 group-hover:w-12 transition-all duration-300" />
+
+        <h3 className="font-display text-2xl text-flow-orange leading-tight mb-3 group-hover:text-flow-cream transition-colors duration-150">
           {title}
         </h3>
-        <p className="text-white/55 text-sm leading-relaxed flex-1 mb-5">
+
+        <p className="font-body text-flow-muted text-sm leading-relaxed flex-1 mb-5">
           {description}
         </p>
+
         <div className="flex flex-wrap gap-1.5 mb-6">
           {tags.map((tag) => (
             <span
               key={tag}
-              className="px-2.5 py-1 text-xs text-white/35 border border-white/10 rounded-sm font-body"
+              className="px-2.5 py-1 text-xs font-body text-flow-muted/60 border border-white/10 rounded-sm"
             >
               {tag}
             </span>
           ))}
         </div>
-        <span className="flex items-center gap-2 text-brand-red font-display font-bold text-xs uppercase tracking-widest group-hover:gap-3 transition-all duration-200">
+
+        <span className="flex items-center gap-2 font-body font-semibold text-xs uppercase tracking-widest text-flow-teal group-hover:gap-3 transition-all duration-200">
           Learn more
           <svg className="w-3.5 h-3.5" viewBox="0 0 14 14" fill="none">
             <path

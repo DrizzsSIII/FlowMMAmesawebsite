@@ -9,39 +9,51 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        brand: {
-          red: "#C8102E",
-          "red-dark": "#9B0C22",
-          "red-light": "#E83050",
-          black: "#0A0A0A",
-          "gray-dark": "#111111",
-          "gray-mid": "#1C1C1C",
-          "gray-light": "#2A2A2A",
-          white: "#F5F5F5",
+        flow: {
+          // Primary orange/gold — FLOW lettering in logo
+          orange:       "#E8890A",
+          "orange-hover": "#C97408",
+          // Secondary teal/cyan — sky in logo
+          teal:         "#16C7D9",
+          "teal-hover": "#0FAEC0",
+          // Sunset red-orange — gradient in logo
+          sunset:       "#E84D2A",
+          // Backgrounds
+          black:        "#070707",   // deepest background
+          dark:         "#0E0E0E",   // section backgrounds
+          card:         "#141414",   // card surfaces
+          "card-hover": "#1A1A1A",
+          // Text
+          cream:        "#F5E7D0",   // warm off-white — readable on dark
+          muted:        "#A89880",   // muted cream for secondary text
         },
       },
       fontFamily: {
         display: ["var(--font-display)", "sans-serif"],
-        body: ["var(--font-body)", "sans-serif"],
+        body:    ["var(--font-body)",    "sans-serif"],
       },
       letterSpacing: {
         tightest: "-0.04em",
-        tighter: "-0.03em",
+        tighter:  "-0.03em",
+        widest:   "0.2em",
       },
-      lineHeight: {
-        relaxed: "1.7",
+      boxShadow: {
+        orange: "0 4px 24px rgba(232,137,10,0.30)",
+        "orange-lg": "0 8px 40px rgba(232,137,10,0.40)",
+        teal:   "0 4px 24px rgba(22,199,217,0.25)",
+        "teal-lg": "0 8px 40px rgba(22,199,217,0.35)",
       },
       animation: {
-        "fade-up": "fadeUp 0.6s ease forwards",
-        "fade-in": "fadeIn 0.5s ease forwards",
+        "fade-up": "fadeUp 0.55s ease forwards",
+        "fade-in": "fadeIn 0.45s ease forwards",
       },
       keyframes: {
         fadeUp: {
-          "0%": { opacity: "0", transform: "translateY(24px)" },
+          "0%":   { opacity: "0", transform: "translateY(20px)" },
           "100%": { opacity: "1", transform: "translateY(0)" },
         },
         fadeIn: {
-          "0%": { opacity: "0" },
+          "0%":   { opacity: "0" },
           "100%": { opacity: "1" },
         },
       },

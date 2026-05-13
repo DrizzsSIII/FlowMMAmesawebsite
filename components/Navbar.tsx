@@ -2,57 +2,70 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 
 const navLinks = [
   { label: "Programs", href: "/programs" },
   { label: "Schedule", href: "/schedule" },
-  { label: "About", href: "/about" },
-  { label: "Contact", href: "/contact" },
+  { label: "About",    href: "/about"    },
+  { label: "Contact",  href: "/contact"  },
 ];
 
 export default function Navbar() {
-  const [isOpen, setIsOpen] = useState(false);
+  const [isOpen,   setIsOpen]   = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const pathname = usePathname();
 
   useEffect(() => {
-    const handleScroll = () => setScrolled(window.scrollY > 48);
-    window.addEventListener("scroll", handleScroll, { passive: true });
-    return () => window.removeEventListener("scroll", handleScroll);
+    const onScroll = () => setScrolled(window.scrollY > 48);
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  useEffect(() => {
-    setIsOpen(false);
-  }, [pathname]);
+  useEffect(() => { setIsOpen(false); }, [pathname]);
+
+  const scrolledStyle = "bg-flow-black/95 backdrop-blur-md border-b border-white/8 shadow-[0_2px_24px_rgba(0,0,0,0.6)]";
+  const clearStyle    = "bg-transparent";
 
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled || isOpen
-          ? "bg-[#0A0A0A]/96 backdrop-blur-md border-b border-white/8"
-          : "bg-transparent"
+        scrolled || isOpen ? scrolledStyle : clearStyle
       }`}
     >
       <nav className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-16 lg:h-20">
+
         {/* Logo */}
-        <Link href="/" className="shrink-0">
-          <span className="font-display font-black text-2xl tracking-tightest text-white uppercase">
-            Flow<span className="text-brand-red">MMA</span>
-          </span>
+        <Link href="/" className="flex items-center gap-3 shrink-0 group">
+          <Image
+            src="/images/logo.png"
+            alt="Flow MMA Academy"
+            width={48}
+            height={48}
+            className="w-10 h-10 lg:w-12 lg:h-12 object-contain drop-shadow-[0_2px_8px_rgba(232,137,10,0.4)] group-hover:drop-shadow-[0_2px_12px_rgba(232,137,10,0.6)] transition-all duration-200"
+          />
+          <div className="hidden sm:block">
+            <span className="font-display text-xl lg:text-2xl text-flow-cream leading-none block">
+              FLOW
+            </span>
+            <span className="font-body font-semibold text-[10px] uppercase tracking-widest text-flow-muted leading-none block">
+              MMA Academy
+            </span>
+          </div>
         </Link>
 
         {/* Desktop links */}
-        <div className="hidden lg:flex items-center gap-8">
+        <div className="hidden lg:flex items-center gap-7">
           {navLinks.map((link) => (
             <Link
               key={link.href}
               href={link.href}
-              className={`font-display font-semibold text-sm uppercase tracking-widest transition-colors duration-150 ${
+              className={`font-body font-semibold text-sm uppercase tracking-widest transition-colors duration-150 ${
                 pathname === link.href
-                  ? "text-brand-red"
-                  : "text-white/60 hover:text-white"
+                  ? "text-flow-orange"
+                  : "text-flow-cream/70 hover:text-flow-cream"
               }`}
             >
               {link.label}
@@ -60,7 +73,7 @@ export default function Navbar() {
           ))}
           <Link
             href="/contact"
-            className="ml-4 px-5 py-2.5 bg-brand-red hover:bg-brand-red-dark text-white font-display font-bold uppercase tracking-wider text-sm rounded-sm transition-colors duration-150"
+            className="ml-3 px-5 py-2.5 bg-flow-orange hover:bg-flow-orange-hover text-flow-black font-body font-bold text-sm uppercase tracking-wider rounded-sm transition-all duration-150 shadow-orange hover:shadow-orange-lg"
           >
             Get Started
           </Link>
@@ -73,23 +86,19 @@ export default function Navbar() {
           onClick={() => setIsOpen((v) => !v)}
           className="lg:hidden w-10 h-10 flex items-center justify-center"
         >
-          <span className="sr-only">Menu</span>
           <div className="flex flex-col gap-[5px]">
-            <span
-              className={`block h-px w-6 bg-white transition-all duration-300 origin-center ${
-                isOpen ? "rotate-45 translate-y-[6px]" : ""
-              }`}
-            />
-            <span
-              className={`block h-px w-6 bg-white transition-all duration-200 ${
-                isOpen ? "opacity-0" : ""
-              }`}
-            />
-            <span
-              className={`block h-px w-6 bg-white transition-all duration-300 origin-center ${
-                isOpen ? "-rotate-45 -translate-y-[6px]" : ""
-              }`}
-            />
+            {["top", "mid", "bot"].map((pos, i) => (
+              <span
+                key={pos}
+                className={`block h-px w-6 bg-flow-cream transition-all duration-300 origin-center ${
+                  isOpen
+                    ? i === 0 ? "rotate-45 translate-y-[6px]"
+                    : i === 1 ? "opacity-0"
+                    : "-rotate-45 -translate-y-[6px]"
+                    : ""
+                }`}
+              />
+            ))}
           </div>
         </button>
       </nav>
@@ -102,17 +111,17 @@ export default function Navbar() {
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.22, ease: "easeInOut" }}
-            className="lg:hidden bg-[#0A0A0A] border-t border-white/8 overflow-hidden"
+            className="lg:hidden bg-flow-black border-t border-white/8 overflow-hidden"
           >
             <div className="max-w-6xl mx-auto px-4 sm:px-6 py-6 flex flex-col gap-1">
               {navLinks.map((link) => (
                 <Link
                   key={link.href}
                   href={link.href}
-                  className={`font-display font-bold text-xl uppercase tracking-wide py-2.5 border-b border-white/6 transition-colors duration-150 ${
+                  className={`font-body font-semibold text-lg uppercase tracking-wider py-3 border-b border-white/6 transition-colors duration-150 ${
                     pathname === link.href
-                      ? "text-brand-red"
-                      : "text-white/75 hover:text-white"
+                      ? "text-flow-orange"
+                      : "text-flow-cream/70 hover:text-flow-cream"
                   }`}
                 >
                   {link.label}
@@ -120,7 +129,7 @@ export default function Navbar() {
               ))}
               <Link
                 href="/contact"
-                className="mt-4 text-center px-6 py-4 bg-brand-red hover:bg-brand-red-dark text-white font-display font-black uppercase tracking-wider text-lg rounded-sm transition-colors duration-150"
+                className="mt-5 text-center px-6 py-4 bg-flow-orange hover:bg-flow-orange-hover text-flow-black font-body font-bold uppercase tracking-wider text-base rounded-sm transition-colors duration-150"
               >
                 Get Started
               </Link>

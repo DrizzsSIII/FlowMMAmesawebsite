@@ -11,10 +11,10 @@ export const metadata: Metadata = {
 
 const programs = [
   {
-    id: "bjj",
-    title: "Brazilian Jiu-Jitsu",
+    id:      "bjj",
+    title:   "Brazilian Jiu-Jitsu",
     tagline: "Master the ground game",
-    whoFor: [
+    whoFor:  [
       "Absolute beginners with no martial arts background",
       "Wrestlers or judoka looking to add submissions",
       "Competitors pursuing BJJ tournaments",
@@ -34,10 +34,10 @@ const programs = [
     desc: "Brazilian Jiu-Jitsu is the ultimate equalizer — a system that lets a smaller person control and submit a larger, stronger opponent through leverage and technique. Our BJJ program runs both Gi and No-Gi tracks with structured curriculum from white belt to black belt.",
   },
   {
-    id: "muay-thai",
-    title: "Muay Thai",
+    id:      "muay-thai",
+    title:   "Muay Thai",
     tagline: "The art of 8 limbs",
-    whoFor: [
+    whoFor:  [
       "Anyone wanting explosive striking skills",
       "Boxers or kickboxers expanding their game",
       "Athletes looking for elite conditioning",
@@ -57,10 +57,10 @@ const programs = [
     desc: "Muay Thai is the striking backbone of MMA and one of the most battle-tested combat sports in the world. Our instructors teach authentic technique with an emphasis on footwork, timing, and power generation. Expect to be pushed hard.",
   },
   {
-    id: "mma",
-    title: "Mixed Martial Arts",
+    id:      "mma",
+    title:   "Mixed Martial Arts",
     tagline: "The complete combat sport",
-    whoFor: [
+    whoFor:  [
       "Total beginners looking for a full-body challenge",
       "Athletes wanting to add fighting skills",
       "Competitors training for amateur bouts",
@@ -77,13 +77,13 @@ const programs = [
       "Situational training — 15 min",
       "Live sparring (optional) — 20 min",
     ],
-    desc: "MMA is the most complete form of combat sports training. Our MMA program weaves together striking, wrestling, and ground game into a seamless system. Whether you're preparing for competition or just want the most well-rounded training available, this is it.",
+    desc: "MMA is the most complete form of combat sports training. Our program weaves together striking, wrestling, and ground game into a seamless system. Whether you're preparing for competition or just want the most well-rounded training available, this is it.",
   },
   {
-    id: "kids",
-    title: "Kids Classes",
+    id:      "kids",
+    title:   "Kids Classes",
     tagline: "Building champions for life",
-    whoFor: [
+    whoFor:  [
       "Kids ages 5–15 with no experience",
       "Children seeking confidence and discipline",
       "Young athletes wanting structured activity",
@@ -100,11 +100,11 @@ const programs = [
       "Drills and games — 20 min",
       "Cool-down and character lesson — 10 min",
     ],
-    desc: "Our Kids program is built around three things: safety, fun, and real martial arts development. Children learn fundamentals in an age-appropriate, positive environment. We see the discipline and confidence built here carry over into school, sports, and life.",
+    desc: "Our Kids program is built around three things: safety, fun, and real martial arts development. Children learn fundamentals in an age-appropriate, positive environment. The discipline built here carries over into school, sports, and life.",
   },
 ];
 
-function ListBlock({
+function InfoBlock({
   title,
   items,
   marker,
@@ -114,14 +114,14 @@ function ListBlock({
   marker: string;
 }) {
   return (
-    <div className="bg-[#141414] border border-white/8 rounded-sm p-6">
-      <h3 className="font-display font-bold text-xs uppercase tracking-widest text-brand-red mb-4">
+    <div className="bg-flow-card border border-white/8 rounded-sm p-6">
+      <h3 className="font-body font-semibold text-xs uppercase tracking-widest text-flow-teal mb-4">
         {title}
       </h3>
       <ul className="flex flex-col gap-2.5">
         {items.map((item) => (
-          <li key={item} className="flex items-start gap-3 text-sm text-white/60">
-            <span className="text-brand-red mt-0.5 shrink-0 text-xs">{marker}</span>
+          <li key={item} className="flex items-start gap-3 font-body text-sm text-flow-muted">
+            <span className="text-flow-orange mt-0.5 shrink-0 text-xs">{marker}</span>
             {item}
           </li>
         ))}
@@ -135,7 +135,7 @@ export default function ProgramsPage() {
     <>
       <PageHeader
         eyebrow="Train at Flow MMA"
-        title="Programs"
+        title="PROGRAMS"
         description="Four disciplines. All skill levels welcome. Whether you're a complete beginner or prepping for competition — we have the right class for you."
       />
 
@@ -144,26 +144,26 @@ export default function ProgramsPage() {
           key={prog.id}
           id={prog.id}
           className={`py-20 lg:py-24 border-b border-white/8 ${
-            i % 2 === 0 ? "bg-[#0A0A0A]" : "bg-[#0D0D0D]"
+            i % 2 === 0 ? "bg-flow-black" : "bg-flow-dark"
           }`}
         >
           <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-start">
-              {/* Text */}
+              {/* Text side */}
               <div className={i % 2 !== 0 ? "lg:order-2" : ""}>
-                <div className="w-8 h-px bg-brand-red mb-6" />
-                <p className="font-display font-semibold text-brand-red uppercase tracking-widest text-sm mb-2">
+                <div className="w-10 h-0.5 bg-gradient-to-r from-flow-orange to-flow-sunset mb-5" />
+                <p className="font-body font-semibold text-flow-teal uppercase tracking-widest text-sm mb-2">
                   {prog.tagline}
                 </p>
-                <h2 className="font-display font-black text-4xl lg:text-5xl uppercase tracking-tightest text-white leading-none mb-6">
-                  {prog.title}
+                <h2 className="font-display text-4xl lg:text-5xl text-flow-cream leading-tight mb-6">
+                  {prog.title.toUpperCase()}
                 </h2>
-                <p className="text-white/55 text-base leading-relaxed mb-8 max-w-lg">
+                <p className="font-body text-flow-muted text-base leading-relaxed mb-8 max-w-lg">
                   {prog.desc}
                 </p>
                 <Link
                   href="/contact"
-                  className="inline-flex items-center px-7 py-3.5 bg-brand-red hover:bg-brand-red-dark text-white font-display font-black uppercase tracking-wider text-sm rounded-sm transition-colors duration-150"
+                  className="inline-flex items-center px-7 py-3.5 bg-flow-orange hover:bg-flow-orange-hover text-flow-black font-body font-bold uppercase tracking-wider text-sm rounded-sm transition-all duration-150 shadow-orange hover:shadow-orange-lg"
                 >
                   Start Free Trial
                 </Link>
@@ -171,19 +171,19 @@ export default function ProgramsPage() {
 
               {/* Detail cards */}
               <div className={`flex flex-col gap-4 ${i % 2 !== 0 ? "lg:order-1" : ""}`}>
-                <ListBlock title="Who It's For" items={prog.whoFor} marker="✓" />
-                <ListBlock title="What You'll Learn" items={prog.learn} marker="→" />
-                <div className="bg-[#141414] border border-white/8 rounded-sm p-6">
-                  <h3 className="font-display font-bold text-xs uppercase tracking-widest text-brand-red mb-4">
+                <InfoBlock title="Who It's For"       items={prog.whoFor}    marker="✓" />
+                <InfoBlock title="What You'll Learn"  items={prog.learn}     marker="→" />
+                <div className="bg-flow-card border border-white/8 rounded-sm p-6">
+                  <h3 className="font-body font-semibold text-xs uppercase tracking-widest text-flow-teal mb-4">
                     Class Structure
                   </h3>
                   <div className="flex flex-col gap-3">
                     {prog.structure.map((step, idx) => (
                       <div key={step} className="flex items-center gap-3">
-                        <span className="w-5 h-5 rounded-sm bg-brand-red/15 border border-brand-red/25 flex items-center justify-center text-brand-red font-display font-black text-xs shrink-0">
+                        <span className="w-5 h-5 rounded-sm bg-flow-orange/15 border border-flow-orange/25 flex items-center justify-center font-display text-flow-orange text-xs shrink-0">
                           {idx + 1}
                         </span>
-                        <span className="text-white/60 text-sm">{step}</span>
+                        <span className="font-body text-flow-muted text-sm">{step}</span>
                       </div>
                     ))}
                   </div>

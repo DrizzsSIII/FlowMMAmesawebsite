@@ -1,14 +1,25 @@
-@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800;900&family=Barlow:wght@300;400;500;600&display=swap');
+/* Bungee — bold block display font (matches FLOW logo lettering style)
+   Montserrat — clean geometric sans for body, nav, and buttons         */
+@import url('https://fonts.googleapis.com/css2?family=Bungee&family=Montserrat:wght@400;500;600;700&display=swap');
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+/* ─── CSS custom properties ─────────────────────────────────────── */
 :root {
-  --font-display: 'Barlow Condensed', sans-serif;
-  --font-body: 'Barlow', sans-serif;
+  --font-display: 'Bungee', sans-serif;
+  --font-body:    'Montserrat', sans-serif;
+
+  /* Brand palette quick-access */
+  --color-orange: #E8890A;
+  --color-teal:   #16C7D9;
+  --color-sunset: #E84D2A;
+  --color-black:  #070707;
+  --color-cream:  #F5E7D0;
 }
 
+/* ─── Reset ─────────────────────────────────────────────────────── */
 *,
 *::before,
 *::after {
@@ -22,47 +33,54 @@ html {
 }
 
 body {
-  background-color: #0A0A0A;
-  color: #F5F5F5;
+  background-color: var(--color-black);
+  color: var(--color-cream);
   font-family: var(--font-body);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  line-height: 1.6;
+  line-height: 1.65;
 }
 
-/* Scrollbar */
-::-webkit-scrollbar {
-  width: 4px;
-}
-::-webkit-scrollbar-track {
-  background: #0A0A0A;
-}
-::-webkit-scrollbar-thumb {
-  background: #C8102E;
-  border-radius: 2px;
-}
+/* ─── Scrollbar ──────────────────────────────────────────────────── */
+::-webkit-scrollbar          { width: 4px; }
+::-webkit-scrollbar-track    { background: #070707; }
+::-webkit-scrollbar-thumb    { background: var(--color-orange); border-radius: 2px; }
 
-/* Selection */
+/* ─── Selection ──────────────────────────────────────────────────── */
 ::selection {
-  background: #C8102E;
-  color: #F5F5F5;
+  background: var(--color-orange);
+  color: #070707;
 }
 
-/* Font utilities */
-.font-display {
-  font-family: var(--font-display);
-}
+/* ─── Font utility (Tailwind won't auto-apply CSS vars to body) ─── */
+.font-display { font-family: var(--font-display); }
+.font-body    { font-family: var(--font-body); }
 
-/* Gradient text */
-.text-gradient-red {
-  background: linear-gradient(135deg, #C8102E 0%, #E83050 100%);
+/* ─── Gradient text helpers ──────────────────────────────────────── */
+.text-gradient-orange {
+  background: linear-gradient(135deg, #E8890A 0%, #E84D2A 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
 
-/* Premium divider */
-.section-divider {
+.text-gradient-teal {
+  background: linear-gradient(135deg, #16C7D9 0%, #0FAEC0 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ─── Sunset glow helpers used in hero ──────────────────────────── */
+.glow-orange {
+  box-shadow: 0 0 80px 20px rgba(232, 137, 10, 0.18);
+}
+.glow-teal {
+  box-shadow: 0 0 80px 20px rgba(22, 199, 217, 0.15);
+}
+
+/* ─── Hairline divider ───────────────────────────────────────────── */
+.brand-divider {
   height: 1px;
-  background: linear-gradient(to right, transparent, rgba(255,255,255,0.08), transparent);
+  background: linear-gradient(to right, transparent, rgba(232,137,10,0.35), transparent);
 }

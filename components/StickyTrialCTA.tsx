@@ -29,7 +29,7 @@ export default function StickyTrialCTA() {
         >
           <Link
             href="/contact"
-            className="w-full max-w-sm flex items-center justify-center gap-2 px-8 py-4 bg-brand-red hover:bg-brand-red-dark text-white font-display font-black uppercase tracking-wider text-base rounded-sm shadow-[0_4px_24px_rgba(0,0,0,0.5)] transition-colors duration-150"
+            className="w-full max-w-sm flex items-center justify-center gap-2 px-8 py-4 bg-flow-orange hover:bg-flow-orange-hover text-flow-black font-body font-bold uppercase tracking-wider text-sm rounded-sm shadow-[0_4px_32px_rgba(232,137,10,0.45)] hover:shadow-[0_4px_40px_rgba(232,137,10,0.60)] transition-all duration-150"
           >
             Get Started — Free Class
           </Link>
