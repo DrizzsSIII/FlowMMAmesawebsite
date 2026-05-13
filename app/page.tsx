@@ -54,12 +54,12 @@ export default function HomePage() {
       <section className="py-20 lg:py-24 bg-flow-black">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="mb-12">
-            <p className="font-body font-semibold text-flow-teal uppercase tracking-widest text-sm mb-3">
+            <p className="font-body font-semibold text-flow-orange uppercase tracking-widest text-xs mb-4">
               What We Offer
             </p>
-            <div className="w-10 h-0.5 bg-gradient-to-r from-flow-orange to-flow-sunset mb-4" />
-            <h2 className="font-display text-4xl lg:text-5xl text-flow-cream leading-tight">
-              PROGRAMS
+            <div className="w-10 h-0.5 bg-flow-orange mb-5" />
+            <h2 className="font-display text-4xl lg:text-5xl text-flow-cream leading-tight tracking-wide">
+              Programs
             </h2>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -91,19 +91,19 @@ export default function HomePage() {
       <section className="py-20 lg:py-24 bg-flow-black">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="mb-12">
-            <p className="font-body font-semibold text-flow-teal uppercase tracking-widest text-sm mb-3">
+            <p className="font-body font-semibold text-flow-orange uppercase tracking-widest text-xs mb-4">
               Why Train With Us
             </p>
-            <div className="w-10 h-0.5 bg-gradient-to-r from-flow-orange to-flow-sunset mb-4" />
-            <h2 className="font-display text-4xl lg:text-5xl text-flow-cream leading-tight">
-              THE FLOW DIFFERENCE
+            <div className="w-10 h-0.5 bg-flow-orange mb-5" />
+            <h2 className="font-display text-4xl lg:text-5xl text-flow-cream leading-tight tracking-wide">
+              The Flow Difference
             </h2>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-10">
             {pillars.map((item) => (
               <div key={item.title}>
-                <div className="w-8 h-0.5 bg-gradient-to-r from-flow-orange to-flow-teal mb-5" />
-                <h3 className="font-display text-xl text-flow-orange leading-tight mb-2">
+                <div className="w-6 h-0.5 bg-flow-orange mb-5" />
+                <h3 className="font-display text-xl text-flow-cream leading-tight mb-2 tracking-wide">
                   {item.title}
                 </h3>
                 <p className="font-body text-flow-muted text-sm leading-relaxed">
@@ -120,12 +120,12 @@ export default function HomePage() {
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4 mb-10">
             <div>
-              <p className="font-body font-semibold text-flow-teal uppercase tracking-widest text-sm mb-3">
+              <p className="font-body font-semibold text-flow-orange uppercase tracking-widest text-xs mb-4">
                 Class Times
               </p>
-              <div className="w-10 h-0.5 bg-gradient-to-r from-flow-orange to-flow-sunset mb-4" />
-              <h2 className="font-display text-4xl lg:text-5xl text-flow-cream leading-tight">
-                CLASS SCHEDULE
+              <div className="w-10 h-0.5 bg-flow-orange mb-5" />
+              <h2 className="font-display text-4xl lg:text-5xl text-flow-cream leading-tight tracking-wide">
+                Class Schedule
               </h2>
               <p className="font-body text-flow-muted/60 text-sm mt-2">
                 View our current weekly training schedule

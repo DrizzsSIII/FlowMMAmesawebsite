@@ -30,9 +30,9 @@ export default function ProgramCard({
         className="group flex flex-col h-full bg-flow-card border border-white/8 rounded-sm p-6 hover:border-flow-teal/40 hover:shadow-[0_8px_40px_rgba(22,199,217,0.10)] transition-all duration-200"
       >
         {/* Orange accent top bar */}
-        <div className="w-8 h-0.5 bg-gradient-to-r from-flow-orange to-flow-sunset mb-5 group-hover:w-12 transition-all duration-300" />
+        <div className="w-6 h-0.5 bg-flow-orange mb-5 group-hover:w-10 transition-all duration-300" />
 
-        <h3 className="font-display text-2xl text-flow-orange leading-tight mb-3 group-hover:text-flow-cream transition-colors duration-150">
+        <h3 className="font-display text-xl text-flow-cream leading-tight tracking-wide mb-3 group-hover:text-flow-orange transition-colors duration-150">
           {title}
         </h3>
 

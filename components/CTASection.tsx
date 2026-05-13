@@ -17,28 +17,24 @@ export default function CTASection({
   ctaHref  = "/contact",
 }: CTASectionProps) {
   return (
-    <section className="py-20 lg:py-24 bg-flow-dark border-t border-white/8 relative overflow-hidden">
-      {/* Subtle branded glow */}
-      <div className="absolute top-0 right-1/4 w-[400px] h-[200px] bg-flow-orange/6 blur-[80px] rounded-full pointer-events-none" />
-      <div className="absolute bottom-0 left-1/4 w-[400px] h-[200px] bg-flow-teal/5 blur-[80px] rounded-full pointer-events-none" />
-
-      <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="py-20 lg:py-24 bg-flow-dark border-t border-white/8">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-2xl">
           {/* Accent line — sunset gradient */}
           <motion.div
             initial={{ scaleX: 0, opacity: 0 }}
             whileInView={{ scaleX: 1, opacity: 1 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
-            className="origin-left w-12 h-0.5 bg-gradient-to-r from-flow-orange to-flow-sunset mb-8"
+            transition={{ duration: 0.4 }}
+            className="origin-left w-10 h-0.5 bg-flow-orange mb-7"
           />
 
           <motion.h2
-            initial={{ opacity: 0, y: 16 }}
+            initial={{ opacity: 0, y: 14 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.45, delay: 0.06 }}
-            className="font-display text-4xl lg:text-5xl text-flow-cream leading-tight mb-5"
+            transition={{ duration: 0.4, delay: 0.06 }}
+            className="font-display text-3xl lg:text-4xl text-flow-cream leading-tight tracking-wide mb-5"
           >
             {headline}
           </motion.h2>

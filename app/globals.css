@@ -1,6 +1,6 @@
-/* Bungee — bold block display font (matches FLOW logo lettering style)
-   Montserrat — clean geometric sans for body, nav, and buttons         */
-@import url('https://fonts.googleapis.com/css2?family=Bungee&family=Montserrat:wght@400;500;600;700&display=swap');
+/* Graduate — athletic block serif display (matches FLOW logo lettering feel)
+   Montserrat — clean geometric sans for body, nav, and buttons              */
+@import url('https://fonts.googleapis.com/css2?family=Graduate&family=Montserrat:wght@400;500;600;700&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -8,7 +8,7 @@
 
 /* ─── CSS custom properties ─────────────────────────────────────── */
 :root {
-  --font-display: 'Bungee', sans-serif;
+  --font-display: 'Graduate', serif;
   --font-body:    'Montserrat', sans-serif;
 
   /* Brand palette quick-access */

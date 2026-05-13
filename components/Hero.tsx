@@ -1,14 +1,13 @@
 "use client";
 
 import Link from "next/link";
-import Image from "next/image";
 import { motion } from "framer-motion";
 
 export default function Hero() {
   return (
     <section className="relative min-h-screen flex items-center overflow-hidden bg-flow-black">
 
-      {/* ── Background MMA image with dark overlay ── */}
+      {/* ── Background image ── */}
       <div className="absolute inset-0">
         <div
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
@@ -16,99 +15,71 @@ export default function Hero() {
             backgroundImage: `url('https://images.unsplash.com/photo-1549719386-74dfcbf7dbed?w=1600&q=80&auto=format&fit=crop')`,
           }}
         />
-        {/* Main darkening layer */}
-        <div className="absolute inset-0 bg-gradient-to-r from-flow-black/92 via-flow-black/80 to-flow-black/55" />
-        {/* Bottom fade-out to page background */}
-        <div className="absolute inset-0 bg-gradient-to-t from-flow-black via-transparent to-flow-black/40" />
+        <div className="absolute inset-0 bg-gradient-to-r from-flow-black/95 via-flow-black/82 to-flow-black/50" />
+        <div className="absolute inset-0 bg-gradient-to-t from-flow-black via-transparent to-transparent" />
       </div>
 
-      {/* ── Branded sunset glow layers ── */}
-      {/* Teal — top right, like the logo sky */}
-      <div className="absolute top-0 right-0 w-[500px] h-[500px] rounded-full bg-flow-teal/10 blur-[120px] pointer-events-none" />
-      {/* Orange — bottom left, like the logo FLOW lettering */}
-      <div className="absolute bottom-0 left-0 w-[600px] h-[400px] rounded-full bg-flow-orange/12 blur-[100px] pointer-events-none" />
-      {/* Sunset — centre-bottom warm bleed */}
-      <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[800px] h-[200px] rounded-full bg-flow-sunset/6 blur-[80px] pointer-events-none" />
+      {/* Single subtle brand glow — left side only */}
+      <div className="absolute left-0 top-1/4 w-[480px] h-[480px] rounded-full bg-flow-orange/8 blur-[140px] pointer-events-none" />
 
       {/* ── Content ── */}
-      <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-28 pb-20 lg:pt-40 lg:pb-28">
-        <div className="max-w-2xl">
+      <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-32 pb-20 lg:pt-44 lg:pb-28">
+        <div className="max-w-xl">
 
-          {/* Logo mark */}
-          <motion.div
-            initial={{ opacity: 0, y: 16 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-            className="mb-8"
-          >
-            <Image
-              src="/images/flow-logo-dark.png"
-              alt="Flow MMA Academy"
-              width={160}
-              height={160}
-              className="w-32 h-32 lg:w-40 lg:h-40 object-contain [mix-blend-mode:lighten] drop-shadow-[0_6px_32px_rgba(232,137,10,0.55)]"
-              priority
-            />
-          </motion.div>
-
-          {/* Eyebrow */}
+          {/* Location eyebrow */}
           <motion.p
-            initial={{ opacity: 0, y: 16 }}
+            initial={{ opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.08 }}
-            className="font-body font-semibold text-flow-teal uppercase tracking-widest text-sm mb-4"
+            transition={{ duration: 0.45 }}
+            className="font-body font-semibold text-flow-orange uppercase tracking-widest text-xs mb-5"
           >
             Mesa, Arizona
           </motion.p>
 
-          {/* Main headline — Bungee display */}
+          {/* Orange accent line */}
+          <motion.div
+            initial={{ scaleX: 0 }}
+            animate={{ scaleX: 1 }}
+            transition={{ duration: 0.4, delay: 0.05 }}
+            className="origin-left w-10 h-0.5 bg-flow-orange mb-7"
+          />
+
+          {/* Main headline */}
           <motion.h1
-            initial={{ opacity: 0, y: 24 }}
+            initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.55, delay: 0.14 }}
-            className="font-display text-6xl sm:text-7xl lg:text-8xl text-flow-cream leading-none mb-3"
+            transition={{ duration: 0.5, delay: 0.1 }}
+            className="font-display text-5xl sm:text-6xl lg:text-7xl text-flow-cream leading-tight tracking-wide mb-4"
           >
-            FLOW
+            Flow MMA Academy
           </motion.h1>
-          <motion.h2
-            initial={{ opacity: 0, y: 24 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.55, delay: 0.2 }}
-            className="font-display text-2xl sm:text-3xl lg:text-4xl text-flow-orange leading-none mb-6"
-          >
-            MMA ACADEMY
-          </motion.h2>
 
           {/* Subtext */}
           <motion.p
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.28 }}
-            className="font-body text-flow-cream/65 text-base lg:text-lg leading-relaxed max-w-lg mb-10"
+            transition={{ duration: 0.45, delay: 0.2 }}
+            className="font-body text-flow-muted text-base lg:text-lg leading-relaxed mb-10"
           >
-            Mixed Martial Arts Training in Mesa, Arizona.
-            <br />
-            Training in Brazilian Jiu-Jitsu, Muay Thai, and Mixed Martial Arts.
+            Brazilian Jiu-Jitsu, Muay Thai, and MMA training in Mesa, Arizona.
           </motion.p>
 
           {/* CTAs */}
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 14 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.36 }}
+            transition={{ duration: 0.45, delay: 0.3 }}
             className="flex flex-col sm:flex-row gap-3"
           >
-            {/* Primary — orange */}
             <Link
               href="/contact"
-              className="inline-flex items-center justify-center px-8 py-4 bg-flow-orange hover:bg-flow-orange-hover text-flow-black font-body font-bold uppercase tracking-wider text-sm rounded-sm transition-all duration-150 shadow-orange hover:shadow-orange-lg"
+              className="inline-flex items-center justify-center px-8 py-4 bg-flow-orange hover:bg-flow-orange-hover text-flow-black font-body font-bold uppercase tracking-wider text-sm rounded-sm transition-colors duration-150 shadow-orange hover:shadow-orange-lg"
             >
               Get Started
             </Link>
-            {/* Secondary — teal outline */}
             <Link
               href="/schedule"
-              className="inline-flex items-center justify-center px-8 py-4 border border-flow-teal/50 hover:border-flow-teal text-flow-teal hover:bg-flow-teal/10 font-body font-semibold uppercase tracking-wider text-sm rounded-sm transition-all duration-150"
+              className="inline-flex items-center justify-center px-8 py-4 border border-white/20 hover:border-flow-teal/60 text-flow-cream/80 hover:text-flow-cream font-body font-semibold uppercase tracking-wider text-sm rounded-sm transition-colors duration-150"
             >
               View Schedule
             </Link>
@@ -119,14 +90,14 @@ export default function Hero() {
       {/* Scroll cue */}
       <motion.div
         initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 1.5 }}
+        animate={{ opacity: 0.5 }}
+        transition={{ delay: 1.8 }}
         className="absolute bottom-8 left-1/2 -translate-x-1/2"
       >
         <motion.div
-          animate={{ y: [0, 7, 0] }}
-          transition={{ repeat: Infinity, duration: 1.8, ease: "easeInOut" }}
-          className="w-px h-10 bg-gradient-to-b from-flow-orange/40 to-transparent mx-auto"
+          animate={{ y: [0, 6, 0] }}
+          transition={{ repeat: Infinity, duration: 2, ease: "easeInOut" }}
+          className="w-px h-8 bg-gradient-to-b from-flow-orange/60 to-transparent mx-auto"
         />
       </motion.div>
     </section>
