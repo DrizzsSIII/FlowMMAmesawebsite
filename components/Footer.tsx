@@ -28,11 +28,11 @@ export default function Footer() {
           <div className="sm:col-span-2">
             <Link href="/" className="inline-flex items-center mb-5 group">
               <Image
-                src="/images/flow-logo-dark.png"
+                src="/images/flow-logo-transparent.png"
                 alt="Flow MMA Academy"
                 width={80}
                 height={80}
-                className="w-16 h-16 object-contain [mix-blend-mode:lighten] drop-shadow-[0_2px_10px_rgba(232,137,10,0.35)] group-hover:drop-shadow-[0_2px_18px_rgba(232,137,10,0.58)] transition-all duration-200"
+                className="w-16 h-16 object-contain drop-shadow-[0_2px_10px_rgba(232,137,10,0.35)] group-hover:drop-shadow-[0_2px_18px_rgba(232,137,10,0.58)] transition-all duration-200"
               />
             </Link>
             <p className="font-body text-flow-muted text-sm leading-relaxed max-w-xs">

@@ -40,11 +40,11 @@ export default function Navbar() {
         {/* Logo */}
         <Link href="/" className="flex items-center shrink-0 group">
           <Image
-            src="/images/flow-logo-dark.png"
+            src="/images/flow-logo-transparent.png"
             alt="Flow MMA Academy"
             width={64}
             height={64}
-            className="w-12 h-12 lg:w-14 lg:h-14 object-contain [mix-blend-mode:lighten] drop-shadow-[0_2px_8px_rgba(232,137,10,0.4)] group-hover:drop-shadow-[0_2px_14px_rgba(232,137,10,0.65)] transition-all duration-200"
+            className="w-12 h-12 lg:w-14 lg:h-14 object-contain drop-shadow-[0_2px_10px_rgba(232,137,10,0.45)] group-hover:drop-shadow-[0_2px_16px_rgba(232,137,10,0.70)] transition-all duration-200"
           />
         </Link>
 
