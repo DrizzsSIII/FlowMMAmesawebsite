@@ -12,7 +12,7 @@ interface CTASectionProps {
 
 export default function CTASection({
   headline = "Start your training today.",
-  subtext  = "Your first class is free. No experience needed.",
+  subtext  = "Contact Flow MMA Academy to get started.",
   ctaLabel = "Get Started",
   ctaHref  = "/contact",
 }: CTASectionProps) {

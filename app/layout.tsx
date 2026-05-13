@@ -1,8 +1,23 @@
 import type { Metadata } from "next";
+import { Graduate, Montserrat } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import StickyTrialCTA from "@/components/StickyTrialCTA";
+
+const graduate = Graduate({
+  weight:   "400",
+  subsets:  ["latin"],
+  variable: "--font-display",
+  display:  "swap",
+});
+
+const montserrat = Montserrat({
+  subsets:  ["latin"],
+  weight:   ["400", "500", "600", "700"],
+  variable: "--font-body",
+  display:  "swap",
+});
 
 export const metadata: Metadata = {
   title: {
@@ -29,13 +44,13 @@ export const metadata: Metadata = {
     locale:      "en_US",
     type:        "website",
   },
-  robots: { index: true, follow: true },
+  robots:      { index: true, follow: true },
   metadataBase: new URL("https://www.flowmmaacademy.com"),
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className="scroll-smooth">
+    <html lang="en" className={`scroll-smooth ${graduate.variable} ${montserrat.variable}`}>
       <body className="bg-flow-black text-flow-cream font-body antialiased">
         <Navbar />
         <main>{children}</main>

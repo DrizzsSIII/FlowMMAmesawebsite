@@ -67,9 +67,9 @@ export default function ContactForm() {
 
   return (
     <form onSubmit={handleSubmit} noValidate className="flex flex-col gap-5">
-      <div className="w-10 h-0.5 bg-gradient-to-r from-flow-orange to-flow-sunset mb-2" />
+      <div className="w-10 h-0.5 bg-flow-orange mb-2" />
       <h2 className="font-display text-3xl text-flow-cream -mt-1 mb-2">
-        START YOUR FREE TRIAL
+        GET IN TOUCH
       </h2>
 
       {/* Name */}

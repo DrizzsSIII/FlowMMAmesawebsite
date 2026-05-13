@@ -2,7 +2,6 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
-import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 
@@ -37,15 +36,14 @@ export default function Navbar() {
     >
       <nav className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-16 lg:h-20">
 
-        {/* Logo */}
-        <Link href="/" className="flex items-center shrink-0 group">
-          <Image
-            src="/images/flow-logo-transparent.png"
-            alt="Flow MMA Academy"
-            width={64}
-            height={64}
-            className="w-12 h-12 lg:w-14 lg:h-14 object-contain drop-shadow-[0_2px_10px_rgba(232,137,10,0.45)] group-hover:drop-shadow-[0_2px_16px_rgba(232,137,10,0.70)] transition-all duration-200"
-          />
+        {/* Logo — text branding */}
+        <Link href="/" className="flex flex-col items-start leading-none shrink-0 group">
+          <span className="font-display text-2xl lg:text-3xl text-flow-orange tracking-wide group-hover:opacity-90 transition-opacity duration-150">
+            FLOW
+          </span>
+          <span className="font-body font-semibold text-[9px] uppercase tracking-[0.2em] text-flow-cream/55 -mt-0.5">
+            MMA Academy
+          </span>
         </Link>
 
         {/* Desktop links */}

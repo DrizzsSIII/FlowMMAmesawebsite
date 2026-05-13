@@ -8,7 +8,7 @@ import Image from "next/image";
 export const metadata: Metadata = {
   title: "Flow MMA Academy | MMA Gym Mesa AZ — BJJ, Muay Thai, MMA",
   description:
-    "Train MMA, Brazilian Jiu-Jitsu, and Muay Thai in Mesa, AZ. Beginner-friendly classes and serious fighter development. Flow MMA Academy.",
+    "Flow MMA Academy offers MMA, Brazilian Jiu-Jitsu, Muay Thai, and Kids Classes in Mesa, AZ.",
 };
 
 const programs = [

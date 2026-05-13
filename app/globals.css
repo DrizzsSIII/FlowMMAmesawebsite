@@ -1,17 +1,14 @@
-/* Graduate — athletic block serif display (matches FLOW logo lettering feel)
-   Montserrat — clean geometric sans for body, nav, and buttons              */
-@import url('https://fonts.googleapis.com/css2?family=Graduate&family=Montserrat:wght@400;500;600;700&display=swap');
+/* Fonts are loaded via next/font/google in app/layout.tsx —
+   Graduate (display) and Montserrat (body).
+   CSS variables --font-display and --font-body are injected
+   on <html> by Next.js at build time.                          */
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* ─── CSS custom properties ─────────────────────────────────────── */
+/* ─── Brand palette custom properties ───────────────────────── */
 :root {
-  --font-display: 'Graduate', serif;
-  --font-body:    'Montserrat', sans-serif;
-
-  /* Brand palette quick-access */
   --color-orange: #E8890A;
   --color-teal:   #16C7D9;
   --color-sunset: #E84D2A;
@@ -19,7 +16,7 @@
   --color-cream:  #F5E7D0;
 }
 
-/* ─── Reset ─────────────────────────────────────────────────────── */
+/* ─── Reset ─────────────────────────────────────────────────── */
 *,
 *::before,
 *::after {
@@ -41,45 +38,22 @@ body {
   line-height: 1.65;
 }
 
-/* ─── Scrollbar ──────────────────────────────────────────────────── */
+/* ─── Scrollbar ─────────────────────────────────────────────── */
 ::-webkit-scrollbar          { width: 4px; }
 ::-webkit-scrollbar-track    { background: #070707; }
 ::-webkit-scrollbar-thumb    { background: var(--color-orange); border-radius: 2px; }
 
-/* ─── Selection ──────────────────────────────────────────────────── */
+/* ─── Selection ─────────────────────────────────────────────── */
 ::selection {
   background: var(--color-orange);
   color: #070707;
 }
 
-/* ─── Font utility (Tailwind won't auto-apply CSS vars to body) ─── */
+/* ─── Font utilities ─────────────────────────────────────────── */
 .font-display { font-family: var(--font-display); }
 .font-body    { font-family: var(--font-body); }
 
-/* ─── Gradient text helpers ──────────────────────────────────────── */
-.text-gradient-orange {
-  background: linear-gradient(135deg, #E8890A 0%, #E84D2A 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-
-.text-gradient-teal {
-  background: linear-gradient(135deg, #16C7D9 0%, #0FAEC0 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-
-/* ─── Sunset glow helpers used in hero ──────────────────────────── */
-.glow-orange {
-  box-shadow: 0 0 80px 20px rgba(232, 137, 10, 0.18);
-}
-.glow-teal {
-  box-shadow: 0 0 80px 20px rgba(22, 199, 217, 0.15);
-}
-
-/* ─── Hairline divider ───────────────────────────────────────────── */
+/* ─── Hairline divider ───────────────────────────────────────── */
 .brand-divider {
   height: 1px;
   background: linear-gradient(to right, transparent, rgba(232,137,10,0.35), transparent);
