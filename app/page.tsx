@@ -21,7 +21,7 @@ export default function HomePage() {
 
       <section className="border-t border-white/6 bg-flow-black py-20 lg:py-32">
         <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-          <header className="mb-12 max-w-2xl lg:mb-16">
+          <header className="mb-10 max-w-2xl lg:mb-12">
             <p className="mb-4 font-body text-xs font-semibold uppercase tracking-widest text-flow-orange">
               Training
             </p>

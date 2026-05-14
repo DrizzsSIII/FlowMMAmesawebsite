@@ -3,27 +3,32 @@
 import { useState } from "react";
 
 interface ProgramLogoImageProps {
-  src:         string;
-  alt:         string;
-  className?:  string;
+  src?:              string;
+  alt:               string;
+  placeholderLabel:  string;
+  className?:        string;
 }
 
 /**
- * Renders program logo; on load error shows “Program logo coming soon”.
+ * Renders program art when `src` is set; otherwise or on error shows `placeholderLabel`.
  */
-export default function ProgramLogoImage({ src, alt, className = "" }: ProgramLogoImageProps) {
+export default function ProgramLogoImage({
+  src,
+  alt,
+  placeholderLabel,
+  className = "",
+}: ProgramLogoImageProps) {
   const [failed, setFailed] = useState(false);
+  const showPlaceholder = !src || failed;
 
-  if (failed) {
+  if (showPlaceholder) {
     return (
       <div
-        className={`flex h-full min-h-[10rem] w-full flex-col items-center justify-center rounded-xl border border-white/10 bg-[#0a0a0a]/80 px-4 ${className}`}
+        className={`flex h-full w-full max-h-full max-w-[90%] flex-col items-center justify-center rounded-xl border border-white/12 bg-black/50 px-3 text-center ${className}`}
         role="img"
         aria-label={alt}
       >
-        <p className="text-center font-body text-sm leading-relaxed text-flow-muted/80">
-          Program logo coming soon
-        </p>
+        <p className="font-body text-xs leading-relaxed text-flow-muted/90 sm:text-sm">{placeholderLabel}</p>
       </div>
     );
   }

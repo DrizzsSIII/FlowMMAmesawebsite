@@ -13,94 +13,77 @@ interface ProgramLogoCardProps {
 }
 
 const trainBtnClass =
-  "inline-flex w-full items-center justify-center px-6 py-3.5 bg-flow-orange hover:bg-flow-orange-hover text-flow-black font-body font-bold uppercase tracking-wider text-sm rounded-sm transition-colors duration-150 shadow-orange hover:shadow-orange-lg";
+  "inline-flex w-full min-h-[48px] items-center justify-center rounded-sm bg-flow-orange px-6 py-3.5 font-body text-sm font-bold uppercase tracking-wider text-flow-black shadow-orange transition-colors duration-150 hover:bg-flow-orange-hover hover:shadow-orange";
 
 function ProgramImageFrame({
   size,
   accent,
   children,
 }: {
-  size:    CardSize;
-  accent:  ProgramAccent;
+  size:     CardSize;
+  accent:   ProgramAccent;
   children: ReactNode;
 }) {
   const border =
     accent === "teal"
-      ? "border-flow-teal/30 hover:border-flow-teal/50"
-      : "border-flow-orange/30 hover:border-flow-orange/50";
+      ? "border-flow-teal/35 hover:border-flow-teal/55"
+      : "border-flow-orange/35 hover:border-flow-orange/55";
   const height =
     size === "home"
-      ? "h-[230px] sm:h-[240px] md:h-[300px] lg:h-[340px] xl:h-[360px]"
-      : "h-[260px] sm:h-[280px] md:h-[380px] lg:h-[460px] xl:h-[520px]";
+      ? "h-[200px] sm:h-[220px] md:h-[230px] lg:h-[250px]"
+      : "h-[240px] sm:h-[260px] md:h-[340px] lg:h-[420px] xl:h-[480px]";
 
   return (
     <div
-      className={`flex w-full items-center justify-center overflow-hidden rounded-2xl border ${border} bg-[#0a0a0a] transition-colors duration-200 ease-out ${height}`}
+      className={`flex w-full shrink-0 items-center justify-center overflow-hidden rounded-2xl border ${border} bg-black/40 p-4 transition-colors duration-200 sm:p-5 ${height}`}
     >
       {children}
     </div>
   );
 }
 
-function ProgramBody({
-  title,
-  description,
-  accent,
-  align = "center",
-}: {
-  title:       string;
-  description: string;
-  accent:      ProgramAccent;
-  align?:      "center" | "left";
-}) {
-  const line = accent === "teal" ? "bg-flow-teal" : "bg-flow-orange";
-  const text = align === "left" ? "text-left" : "text-center";
-  const lineMx = align === "left" ? "" : "mx-auto";
-
-  return (
-    <>
-      <div className={`mt-6 h-0.5 w-10 ${line} ${lineMx} lg:mt-0`} />
-      <h3
-        className={`font-display mt-5 text-2xl tracking-wide text-flow-cream sm:text-3xl lg:text-4xl ${text} ${
-          align === "left" ? "lg:mt-6" : ""
-        }`}
-      >
-        {title}
-      </h3>
-      <p className={`mt-4 font-body text-sm leading-relaxed text-flow-muted sm:text-base ${text}`}>
-        {description}
-      </p>
-      <a
-        href={BOOKING_URL}
-        target="_blank"
-        rel="noopener noreferrer"
-        className={`${trainBtnClass} mt-6`}
-      >
-        Train With Us
-      </a>
-    </>
-  );
-}
+const imgInnerClass =
+  "mx-auto max-h-[90%] max-w-[85%] object-contain select-none";
 
 export default function ProgramLogoCard({ program, size, splitReverse = false }: ProgramLogoCardProps) {
-  const { title, description, image, accent } = program;
+  const { title, description, image, accent, placeholderLabel } = program;
 
-  const imgClass =
-    "mx-auto h-full w-full max-h-full max-w-full object-contain p-4 sm:p-5 md:p-6 select-none";
-
-  const frameInner = (
+  const imageBlock = (
     <ProgramImageFrame size={size} accent={accent}>
-      <ProgramLogoImage src={image} alt={`${title} logo`} className={imgClass} />
+      <ProgramLogoImage
+        src={image}
+        alt={`${title} program artwork`}
+        placeholderLabel={placeholderLabel}
+        className={imgInnerClass}
+      />
     </ProgramImageFrame>
   );
 
+  const accentLine = accent === "teal" ? "bg-flow-teal" : "bg-flow-orange";
+
   if (size === "page") {
     return (
-      <article className="group">
-        <div className="grid grid-cols-1 items-center gap-10 lg:grid-cols-2 lg:gap-14">
-          <div className={splitReverse ? "lg:order-2" : ""}>{frameInner}</div>
-          <div className={splitReverse ? "lg:order-1 lg:pr-4" : "lg:pl-4"}>
-            <ProgramBody title={title} description={description} accent={accent} align="left" />
+      <article className="group flex h-full min-h-0 flex-col">
+        <div className="grid h-full min-h-0 grid-cols-1 items-stretch gap-10 lg:grid-cols-2 lg:gap-14">
+          <div className={splitReverse ? "lg:order-2" : ""}>{imageBlock}</div>
+          <div
+            className={`flex min-h-0 flex-col ${splitReverse ? "lg:order-1 lg:pr-2" : "lg:pl-2"}`}
+          >
+            <div className={`h-0.5 w-10 shrink-0 ${accentLine}`} />
+            <h2 className="mt-5 font-display text-3xl uppercase leading-tight tracking-wide text-flow-cream sm:text-4xl lg:text-[2.125rem] lg:leading-[1.15]">
+              {title}
+            </h2>
+            <p className="mt-4 max-w-xl flex-1 font-body text-base leading-relaxed text-flow-muted">
+              {description}
+            </p>
+            <a
+              href={BOOKING_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className={`${trainBtnClass} mt-8 lg:mt-auto lg:pt-2`}
+            >
+              Train With Us
+            </a>
           </div>
         </div>
       </article>
@@ -109,15 +92,32 @@ export default function ProgramLogoCard({ program, size, splitReverse = false }:
 
   const outerBorder =
     accent === "teal"
-      ? "border-flow-teal/20 hover:border-flow-teal/45"
-      : "border-flow-orange/20 hover:border-flow-orange/45";
+      ? "border-flow-teal/25 hover:border-flow-teal/45"
+      : "border-flow-orange/25 hover:border-flow-orange/45";
 
   return (
     <article
-      className={`group flex h-full flex-col rounded-2xl border ${outerBorder} bg-transparent p-5 transition-[transform,border-color] duration-200 ease-out hover:-translate-y-1 sm:p-6 lg:p-7`}
+      className={`group flex h-full flex-col rounded-2xl border ${outerBorder} bg-[#070707]/80 p-6 transition-[transform,border-color] duration-200 ease-out hover:-translate-y-0.5 sm:p-7`}
     >
-      {frameInner}
-      <ProgramBody title={title} description={description} accent={accent} align="center" />
+      {imageBlock}
+
+      <div className="flex flex-1 flex-col pt-6 text-center">
+        <div className={`mx-auto h-0.5 w-10 shrink-0 ${accentLine}`} />
+        <h3 className="mt-4 font-display text-2xl uppercase leading-tight tracking-wide text-flow-cream sm:text-3xl">
+          {title}
+        </h3>
+        <p className="mx-auto mt-3 max-w-[22rem] flex-1 font-body text-sm leading-relaxed text-flow-muted sm:text-base">
+          {description}
+        </p>
+        <a
+          href={BOOKING_URL}
+          target="_blank"
+          rel="noopener noreferrer"
+          className={`${trainBtnClass} mt-auto pt-6`}
+        >
+          Train With Us
+        </a>
+      </div>
     </article>
   );
 }
