@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Hero from "@/components/Hero";
+import HomeMeetCoaches from "@/components/HomeMeetCoaches";
 import ProgramLogoCard from "@/components/ProgramLogoCard";
 import CTASection from "@/components/CTASection";
 import ScheduleImageBlock from "@/components/ScheduleImageBlock";
@@ -71,6 +72,8 @@ export default function HomePage() {
           </div>
         </div>
       </section>
+
+      <HomeMeetCoaches />
 
       <section className="border-t border-white/8 bg-flow-black py-20 lg:py-36">
         <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">

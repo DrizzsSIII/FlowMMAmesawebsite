@@ -1,11 +1,19 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import CTASection from "@/components/CTASection";
+import CoachProfileCard from "@/components/CoachProfileCard";
 import PageHeader from "@/components/PageHeader";
+import {
+  ABOUT_US_INTRO,
+  COACH_BJJ_LABEL,
+  DERIC_BULLETS,
+  LINDSEY_BULLETS,
+} from "@/lib/coaches";
 
 export const metadata: Metadata = {
   title: "About — Flow MMA Academy",
   description:
-    "Learn about Flow MMA Academy's training philosophy and community. Mesa's premier MMA gym for all skill levels.",
+    "Meet coaches Deric and Lindsey at Flow MMA Academy in Mesa, AZ. Brazilian Jiu-Jitsu, MMA, Muay Thai, and Kids Classes.",
 };
 
 const values = [
@@ -32,76 +40,74 @@ export default function AboutPage() {
     <>
       <PageHeader
         eyebrow="Our Story"
-        title="ABOUT FLOW MMA"
-        description="Flow MMA Academy offers MMA, BJJ, Muay Thai, and Kids Classes in Mesa, Arizona."
+        title="ABOUT US"
+        description="Flow MMA Academy offers MMA, Brazilian Jiu-Jitsu, Muay Thai, and Kids Classes in Mesa, Arizona."
       />
 
-      {/* Story */}
-      <section className="py-20 lg:py-24 bg-flow-black">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-3xl">
-            <div className="w-10 h-0.5 bg-gradient-to-r from-flow-orange to-flow-sunset mb-8" />
-            <h2 className="font-display text-3xl lg:text-4xl text-flow-cream leading-tight mb-8">
-              ABOUT FLOW MMA
-            </h2>
-            <div className="flex flex-col gap-5 font-body text-flow-muted text-base leading-relaxed">
-              <p>
-                Flow MMA Academy offers martial arts training in Mesa, Arizona.
-                Classes are available in MMA, Brazilian Jiu-Jitsu, Muay Thai,
-                and Kids programs.
-              </p>
-              <p>
-                Flow MMA Academy provides structured martial arts instruction in
-                Mesa, Arizona. Programs include MMA, Brazilian Jiu-Jitsu, Muay Thai,
-                and Kids Classes for all skill levels.
-              </p>
+      <section className="bg-flow-black py-20 lg:py-28">
+        <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 items-start gap-10 lg:grid-cols-2 lg:gap-14">
+            <div className="relative mx-auto aspect-[4/5] w-full max-w-lg overflow-hidden rounded-2xl border border-flow-orange/35 ring-1 ring-flow-teal/25 lg:mx-0 lg:max-w-none">
+              <Image
+                src="/images/coaches.jpg"
+                alt="Flow MMA Academy coaches Deric and Lindsey"
+                fill
+                className="object-cover object-center"
+                sizes="(max-width: 1024px) 100vw, 50vw"
+                priority
+              />
+            </div>
+            <div>
+              <div className="mb-5 h-0.5 w-10 bg-gradient-to-r from-flow-orange to-flow-teal" />
+              <h2 className="font-display text-3xl tracking-wide text-flow-cream sm:text-4xl">About Us</h2>
+              <p className="mt-6 font-body text-base leading-relaxed text-flow-muted sm:text-lg">{ABOUT_US_INTRO}</p>
+            </div>
+          </div>
+
+          <div className="mt-16 border-t border-white/8 pt-16 lg:mt-20 lg:pt-20">
+            <div className="mb-10 max-w-2xl">
+              <p className="font-body text-xs font-semibold uppercase tracking-widest text-flow-teal">Instruction</p>
+              <div className="mt-3 h-0.5 w-10 bg-flow-teal" />
+              <h2 className="mt-4 font-display text-3xl tracking-wide text-flow-cream sm:text-4xl lg:text-5xl">
+                Meet the Coaches
+              </h2>
+            </div>
+            <div className="grid grid-cols-1 gap-8 md:grid-cols-2 md:gap-10">
+              <CoachProfileCard
+                name="Lindsey"
+                beltLabel={COACH_BJJ_LABEL}
+                bullets={LINDSEY_BULLETS}
+                accent="orange"
+              />
+              <CoachProfileCard
+                name="Deric"
+                beltLabel={COACH_BJJ_LABEL}
+                bullets={DERIC_BULLETS}
+                accent="teal"
+              />
             </div>
           </div>
         </div>
       </section>
 
-      {/* Philosophy */}
-      <section className="py-20 lg:py-24 bg-flow-dark border-t border-white/8">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="border-t border-white/8 bg-flow-dark py-20 lg:py-24">
+        <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
           <div className="mb-12">
-            <p className="font-body font-semibold text-flow-teal uppercase tracking-widest text-sm mb-3">
-              What We Stand For
-            </p>
-            <div className="w-10 h-0.5 bg-gradient-to-r from-flow-orange to-flow-sunset mb-4" />
-            <h2 className="font-display text-4xl lg:text-5xl text-flow-cream leading-tight">
-              OUR PHILOSOPHY
-            </h2>
+            <p className="font-body text-sm font-semibold uppercase tracking-widest text-flow-teal">What We Stand For</p>
+            <div className="mt-3 h-0.5 w-10 bg-gradient-to-r from-flow-orange to-flow-sunset" />
+            <h2 className="mt-4 font-display text-4xl leading-tight text-flow-cream lg:text-5xl">OUR PHILOSOPHY</h2>
           </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+          <div className="grid grid-cols-1 gap-5 sm:grid-cols-2">
             {values.map((v) => (
-              <div key={v.title} className="bg-flow-card border border-white/8 rounded-sm p-6 hover:border-flow-teal/30 transition-colors duration-200">
-                <div className="w-8 h-0.5 bg-gradient-to-r from-flow-orange to-flow-teal mb-5" />
-                <h3 className="font-display text-xl text-flow-orange leading-tight mb-2">
-                  {v.title.toUpperCase()}
-                </h3>
-                <p className="font-body text-flow-muted text-sm leading-relaxed">{v.desc}</p>
+              <div
+                key={v.title}
+                className="rounded-sm border border-white/8 bg-flow-card p-6 transition-colors duration-200 hover:border-flow-teal/30"
+              >
+                <div className="mb-5 h-0.5 w-8 bg-gradient-to-r from-flow-orange to-flow-teal" />
+                <h3 className="font-display text-xl leading-tight text-flow-orange">{v.title.toUpperCase()}</h3>
+                <p className="mt-2 font-body text-sm leading-relaxed text-flow-muted">{v.desc}</p>
               </div>
             ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Coaches */}
-      <section className="py-20 lg:py-24 bg-flow-black border-t border-white/8">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="mb-10">
-            <p className="font-body font-semibold text-flow-teal uppercase tracking-widest text-sm mb-3">
-              Instruction
-            </p>
-            <div className="w-10 h-0.5 bg-gradient-to-r from-flow-orange to-flow-sunset mb-4" />
-            <h2 className="font-display text-4xl lg:text-5xl text-flow-cream leading-tight">
-              MEET THE COACHES
-            </h2>
-          </div>
-          <div className="bg-flow-card border border-flow-teal/20 rounded-sm p-8 max-w-lg">
-            <p className="font-body text-flow-muted/60 text-sm leading-relaxed">
-              Coach profiles coming soon.
-            </p>
           </div>
         </div>
       </section>
