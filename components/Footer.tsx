@@ -28,10 +28,9 @@ export default function Footer() {
             <Link href="/" className="inline-block mb-5" aria-label="Flow MMA Academy home">
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
-                src="/images/flow-logo-cutout-transparent.png"
+                src="/images/logoimagewithnobackground.png"
                 alt="Flow MMA Academy"
-                className="rounded-full object-cover"
-                style={{ height: "64px", width: "64px" }}
+                className="h-14 w-auto object-contain"
               />
             </Link>
             <p className="font-body text-flow-muted text-sm leading-relaxed max-w-xs">

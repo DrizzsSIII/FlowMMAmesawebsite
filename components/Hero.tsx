@@ -29,7 +29,7 @@ export default function Hero() {
         >
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
-            src="/images/flow-logo-cutout-transparent.png"
+            src="/images/logoimagewithnobackground.png"
             alt="Flow MMA Academy"
             className="mx-auto h-44 sm:h-56 md:h-72 lg:h-96 w-auto max-w-[min(92vw,520px)] object-contain drop-shadow-[0_0_28px_rgba(22,199,217,0.25)]"
           />
