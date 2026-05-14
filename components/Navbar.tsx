@@ -5,6 +5,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 import SocialLinks from "@/components/SocialLinks";
+import { BOOKING_URL } from "@/lib/site";
 
 const navLinks = [
   { label: "Programs", href: "/programs" },
@@ -35,7 +36,7 @@ export default function Navbar() {
         scrolled || isOpen ? scrolledStyle : clearStyle
       }`}
     >
-      <nav className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-16 lg:h-20">
+      <nav className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between py-3 lg:py-0 lg:h-20">
 
         {/* Logo */}
         <Link href="/" className="shrink-0" aria-label="Flow MMA Academy home">
@@ -43,7 +44,7 @@ export default function Navbar() {
           <img
             src="/images/logoimagewithnobackground.png"
             alt="Flow MMA Academy"
-            className="h-12 lg:h-14 w-auto object-contain"
+            className="h-16 md:h-20 w-auto object-contain"
           />
         </Link>
 
@@ -65,12 +66,14 @@ export default function Navbar() {
             ))}
           </div>
           <SocialLinks className="shrink-0 ml-1" />
-          <Link
-            href="/contact"
-            className="shrink-0 px-5 py-2.5 bg-flow-orange hover:bg-flow-orange-hover text-flow-black font-body font-bold text-sm uppercase tracking-wider rounded-sm transition-all duration-150 shadow-orange hover:shadow-orange-lg"
+          <a
+            href={BOOKING_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="shrink-0 px-5 py-2.5 bg-flow-orange hover:bg-flow-orange-hover text-flow-black font-body font-bold text-sm uppercase tracking-wider rounded-sm transition-colors duration-150 shadow-orange hover:shadow-orange-lg"
           >
             Train With Us
-          </Link>
+          </a>
         </div>
 
         {/* Mobile toggle */}
@@ -124,12 +127,14 @@ export default function Navbar() {
               <div className="flex justify-center mt-5">
                 <SocialLinks />
               </div>
-              <Link
-                href="/contact"
+              <a
+                href={BOOKING_URL}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="mt-4 text-center px-6 py-4 bg-flow-orange hover:bg-flow-orange-hover text-flow-black font-body font-bold uppercase tracking-wider text-base rounded-sm transition-colors duration-150"
               >
                 Train With Us
-              </Link>
+              </a>
             </div>
           </motion.div>
         )}

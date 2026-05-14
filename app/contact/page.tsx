@@ -3,7 +3,7 @@ import Link from "next/link";
 import ContactForm from "@/components/ContactForm";
 import PageHeader from "@/components/PageHeader";
 import SocialLinks from "@/components/SocialLinks";
-import { GOOGLE_MAPS_URL, SITE_ADDRESS } from "@/lib/site";
+import { GOOGLE_MAPS_URL, SITE_ADDRESS, BOOKING_URL } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Contact — Flow MMA Academy",
@@ -47,6 +47,14 @@ export default function ContactPage() {
                   </span>
                   <SocialLinks />
                 </div>
+                <a
+                  href={BOOKING_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex w-full sm:w-auto items-center justify-center px-6 py-3.5 mb-4 bg-flow-orange hover:bg-flow-orange-hover text-flow-black font-body font-bold uppercase tracking-wider text-sm rounded-sm transition-colors duration-150 shadow-orange hover:shadow-orange-lg"
+                >
+                  Train With Us
+                </a>
                 <Link
                   href={GOOGLE_MAPS_URL}
                   target="_blank"

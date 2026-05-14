@@ -58,8 +58,9 @@ export default function SchedulePage() {
 
       <CTASection
         headline="Ready to start training?"
-        subtext="Contact Flow MMA Academy to get started."
+        subtext="Reach out to Flow MMA Academy with questions or book a visit."
         ctaLabel="Train With Us"
+        secondaryCtaLabel="View Schedule"
       />
     </>
   );

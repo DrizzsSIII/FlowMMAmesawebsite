@@ -12,6 +12,8 @@ interface HomeProgramFeatureProps {
   accent: Accent;
   imageRight: boolean;
   index: number;
+  /** e.g. "Learn more" for Muay Thai */
+  linkLabel?: string;
 }
 
 function Placeholder({ accent }: { accent: Accent }) {
@@ -35,6 +37,7 @@ export default function HomeProgramFeature({
   accent,
   imageRight,
   index,
+  linkLabel = "View program",
 }: HomeProgramFeatureProps) {
   const line = accent === "teal" ? "bg-flow-teal" : "bg-flow-orange";
 
@@ -64,9 +67,9 @@ export default function HomeProgramFeature({
           <span
             className={`mt-6 inline-flex items-center gap-2 font-body font-semibold text-xs uppercase tracking-widest ${
               accent === "teal" ? "text-flow-teal" : "text-flow-orange"
-            } group-hover:gap-3 transition-all duration-200`}
+            } group-hover:gap-3 transition-colors duration-200`}
           >
-            View program
+            {linkLabel}
             <svg className="w-3.5 h-3.5" viewBox="0 0 14 14" fill="none" aria-hidden>
               <path d="M2.5 7h9M8 3.5L11.5 7 8 10.5" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round" />
             </svg>

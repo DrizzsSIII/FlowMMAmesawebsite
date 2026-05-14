@@ -1,4 +1,9 @@
-/** Verified / official site details — update Facebook when URL is confirmed */
+/** Verified / official site details */
+
+export const PUBLIC_SITE_URL = "https://flow-mmamesawebsite.vercel.app";
+
+export const BOOKING_URL =
+  "https://flowmma.trafft.com/booking?t=s&uuid=80c6cb63-d108-41f8-a185-45d2df2c78cb";
 
 export const SITE_ADDRESS = {
   org:   "Flow MMA Academy",
@@ -11,8 +16,11 @@ export const GOOGLE_MAPS_URL =
 
 export const INSTAGRAM_URL = "https://www.instagram.com/flowmmaacademy/";
 
-/**
- * TODO: Add verified Facebook URL.
- * Placeholder prevents linking to an unverified profile; icon uses href="#" + preventDefault in SocialLinks.
- */
+/** TODO: Add verified Facebook URL. */
 export const FACEBOOK_URL = "#";
+
+/** TODO: Add verified Twitter/X URL. */
+export const TWITTER_URL = "#";
+
+/** TODO: Add verified LinkedIn URL. */
+export const LINKEDIN_URL = "#";

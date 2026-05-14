@@ -4,6 +4,7 @@ import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import StickyTrialCTA from "@/components/StickyTrialCTA";
+import { PUBLIC_SITE_URL } from "@/lib/site";
 
 const graduate = Graduate({
   weight:   "400",
@@ -39,13 +40,13 @@ export const metadata: Metadata = {
   openGraph: {
     title:       "Flow MMA Academy | MMA Gym Mesa AZ",
     description: "Flow MMA Academy offers MMA, BJJ, and Muay Thai in Mesa, AZ.",
-    url:         "https://www.flowmmaacademy.com",
+    url:         `${PUBLIC_SITE_URL}/`,
     siteName:    "Flow MMA Academy",
     locale:      "en_US",
     type:        "website",
   },
   robots:      { index: true, follow: true },
-  metadataBase: new URL("https://www.flowmmaacademy.com"),
+  metadataBase: new URL(PUBLIC_SITE_URL),
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

@@ -31,7 +31,7 @@ export default function Footer() {
               <img
                 src="/images/logoimagewithnobackground.png"
                 alt="Flow MMA Academy"
-                className="h-14 w-auto object-contain"
+                className="h-16 md:h-24 w-auto object-contain"
               />
             </Link>
             <p className="font-body text-flow-muted text-sm leading-relaxed max-w-sm mb-2">

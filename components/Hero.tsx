@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { motion } from "framer-motion";
+import { BOOKING_URL } from "@/lib/site";
 
 export default function Hero() {
   return (
@@ -47,6 +48,15 @@ export default function Hero() {
         <motion.p
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.4, delay: 0.16 }}
+          className="font-body font-semibold text-flow-orange text-sm sm:text-base tracking-wide mb-3"
+        >
+          Limited Offer: 5 Day Bootcamp
+        </motion.p>
+
+        <motion.p
+          initial={{ opacity: 0, y: 10 }}
+          animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.4, delay: 0.2 }}
           className="font-body text-flow-muted text-sm sm:text-base max-w-md mx-auto leading-relaxed mb-10"
         >
@@ -59,12 +69,14 @@ export default function Hero() {
           transition={{ duration: 0.45, delay: 0.28 }}
           className="flex flex-col sm:flex-row gap-3 justify-center items-stretch sm:items-center"
         >
-          <Link
-            href="/contact"
+          <a
+            href={BOOKING_URL}
+            target="_blank"
+            rel="noopener noreferrer"
             className="inline-flex items-center justify-center px-8 py-4 bg-flow-orange hover:bg-flow-orange-hover text-flow-black font-body font-bold uppercase tracking-wider text-sm rounded-sm transition-colors duration-150 shadow-orange hover:shadow-orange-lg"
           >
             Train With Us
-          </Link>
+          </a>
           <Link
             href="/schedule"
             className="inline-flex items-center justify-center px-8 py-4 border border-white/20 hover:border-flow-teal/60 text-flow-cream/90 hover:text-flow-cream font-body font-semibold uppercase tracking-wider text-sm rounded-sm transition-colors duration-150"

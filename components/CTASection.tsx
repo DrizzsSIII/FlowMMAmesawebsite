@@ -2,6 +2,11 @@
 
 import Link from "next/link";
 import { motion } from "framer-motion";
+import { BOOKING_URL } from "@/lib/site";
+
+function isExternalHref(href: string) {
+  return href.startsWith("http://") || href.startsWith("https://");
+}
 
 interface CTASectionProps {
   headline?: string;
@@ -12,14 +17,23 @@ interface CTASectionProps {
   secondaryCtaHref?: string;
 }
 
+const primaryBtnClass =
+  "inline-flex items-center justify-center px-8 py-4 bg-flow-orange hover:bg-flow-orange-hover text-flow-black font-body font-bold uppercase tracking-wider text-sm rounded-sm transition-colors duration-150 shadow-orange hover:shadow-orange-lg";
+
+const secondaryBtnClass =
+  "inline-flex items-center justify-center px-8 py-4 border border-white/15 hover:border-flow-teal/50 text-flow-cream/85 hover:text-flow-cream font-body font-semibold uppercase tracking-wider text-sm rounded-sm transition-colors duration-150";
+
 export default function CTASection({
   headline = "Start your training today.",
-  subtext = "Contact Flow MMA Academy to get started.",
+  subtext = "Reach out to Flow MMA Academy for program details and training options.",
   ctaLabel = "Train With Us",
-  ctaHref = "/contact",
+  ctaHref = BOOKING_URL,
   secondaryCtaLabel,
   secondaryCtaHref = "/schedule",
 }: CTASectionProps) {
+  const primaryExternal = isExternalHref(ctaHref);
+  const secondaryExternal = secondaryCtaHref ? isExternalHref(secondaryCtaHref) : false;
+
   return (
     <section className="py-20 lg:py-28 bg-flow-dark border-t border-white/8">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -59,19 +73,35 @@ export default function CTASection({
             transition={{ duration: 0.45, delay: 0.18 }}
             className="flex flex-col sm:flex-row flex-wrap gap-3"
           >
-            <Link
-              href={ctaHref}
-              className="inline-flex items-center justify-center px-8 py-4 bg-flow-orange hover:bg-flow-orange-hover text-flow-black font-body font-bold uppercase tracking-wider text-sm rounded-sm transition-colors duration-150 shadow-orange hover:shadow-orange-lg"
-            >
-              {ctaLabel}
-            </Link>
-            {secondaryCtaLabel ? (
-              <Link
-                href={secondaryCtaHref}
-                className="inline-flex items-center justify-center px-8 py-4 border border-white/15 hover:border-flow-teal/50 text-flow-cream/85 hover:text-flow-cream font-body font-semibold uppercase tracking-wider text-sm rounded-sm transition-colors duration-150"
+            {primaryExternal ? (
+              <a
+                href={ctaHref}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={primaryBtnClass}
               >
-                {secondaryCtaLabel}
+                {ctaLabel}
+              </a>
+            ) : (
+              <Link href={ctaHref} className={primaryBtnClass}>
+                {ctaLabel}
               </Link>
+            )}
+            {secondaryCtaLabel ? (
+              secondaryExternal ? (
+                <a
+                  href={secondaryCtaHref}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={secondaryBtnClass}
+                >
+                  {secondaryCtaLabel}
+                </a>
+              ) : (
+                <Link href={secondaryCtaHref ?? "/schedule"} className={secondaryBtnClass}>
+                  {secondaryCtaLabel}
+                </Link>
+              )
             ) : null}
           </motion.div>
         </div>

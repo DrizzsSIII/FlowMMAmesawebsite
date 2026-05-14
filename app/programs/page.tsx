@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import CTASection from "@/components/CTASection";
 import PageHeader from "@/components/PageHeader";
 import Link from "next/link";
+import { BOOKING_URL } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Programs — MMA, BJJ, Muay Thai & Kids Classes",
@@ -102,12 +103,14 @@ export default function ProgramsPage() {
                     {prog.desc}
                   </p>
                   <div className="flex flex-wrap gap-3">
-                    <Link
-                      href="/contact"
-                      className="inline-flex items-center px-7 py-3.5 bg-flow-orange hover:bg-flow-orange-hover text-flow-black font-body font-bold uppercase tracking-wider text-sm rounded-sm transition-all duration-150 shadow-orange hover:shadow-orange-lg"
+                    <a
+                      href={BOOKING_URL}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center px-7 py-3.5 bg-flow-orange hover:bg-flow-orange-hover text-flow-black font-body font-bold uppercase tracking-wider text-sm rounded-sm transition-colors duration-150 shadow-orange hover:shadow-orange-lg"
                     >
                       Train With Us
-                    </Link>
+                    </a>
                     <Link
                       href="/schedule"
                       className="inline-flex items-center px-7 py-3.5 border border-white/15 hover:border-flow-teal/50 text-flow-cream/70 hover:text-flow-cream font-body font-semibold uppercase tracking-wider text-sm rounded-sm transition-colors duration-150"
@@ -125,8 +128,9 @@ export default function ProgramsPage() {
 
       <CTASection
         headline="Find your program."
-        subtext="Contact Flow MMA Academy to get started."
+        subtext="Contact Flow MMA Academy for program details and training options."
         ctaLabel="Train With Us"
+        secondaryCtaLabel="View Schedule"
       />
     </>
   );

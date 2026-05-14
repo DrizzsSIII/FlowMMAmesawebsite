@@ -4,6 +4,7 @@ import HomeProgramFeature from "@/components/HomeProgramFeature";
 import CTASection from "@/components/CTASection";
 import ScheduleImageBlock from "@/components/ScheduleImageBlock";
 import Link from "next/link";
+import { BOOKING_URL } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Flow MMA Academy | MMA Gym Mesa AZ — BJJ, Muay Thai, MMA",
@@ -23,6 +24,7 @@ const programs = [
     description: "Develop striking skills including punches, kicks, elbows, and knees while improving conditioning and technique.",
     href:        "/programs#muay-thai",
     accent:      "teal" as const,
+    linkLabel:   "Learn more",
   },
   {
     title:       "Mixed Martial Arts",
@@ -84,6 +86,7 @@ export default function HomePage() {
                 accent={prog.accent}
                 imageRight={i % 2 === 1}
                 index={i}
+                linkLabel={prog.linkLabel}
               />
             ))}
           </div>
@@ -169,10 +172,10 @@ export default function HomePage() {
       </section>
 
       <CTASection
-        headline="Start training"
-        subtext="Contact Flow MMA Academy to get started."
-        ctaLabel="Train With Us"
-        ctaHref="/contact"
+        headline="Train With Us"
+        subtext="Limited Offer: 5 Day Bootcamp"
+        ctaLabel="Book A Free Class Today"
+        ctaHref={BOOKING_URL}
         secondaryCtaLabel="View Schedule"
         secondaryCtaHref="/schedule"
       />
