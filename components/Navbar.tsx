@@ -36,13 +36,14 @@ export default function Navbar() {
     >
       <nav className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-16 lg:h-20">
 
-        {/* Logo — mix-blend-mode:screen makes the black background invisible on dark surfaces */}
-        <Link href="/" className="shrink-0 group" aria-label="Flow MMA Academy home">
+        {/* Logo — rounded-full clips the square JPEG to a circle, hiding black corners */}
+        <Link href="/" className="shrink-0" aria-label="Flow MMA Academy home">
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
-            src="/images/flow-logo-transparent.png"
+            src="/images/flow-logo-cutout-transparent.png"
             alt="Flow MMA Academy"
-            className="h-14 lg:h-16 w-auto object-contain [mix-blend-mode:screen] group-hover:brightness-110 transition-all duration-200"
+            className="rounded-full object-cover"
+            style={{ height: "56px", width: "56px" }}
           />
         </Link>
 

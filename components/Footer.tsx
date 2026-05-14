@@ -25,12 +25,13 @@ export default function Footer() {
 
           {/* Brand */}
           <div className="sm:col-span-2">
-            <Link href="/" className="inline-block mb-5 group" aria-label="Flow MMA Academy home">
+            <Link href="/" className="inline-block mb-5" aria-label="Flow MMA Academy home">
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
-                src="/images/flow-logo-transparent.png"
+                src="/images/flow-logo-cutout-transparent.png"
                 alt="Flow MMA Academy"
-                className="h-14 w-auto object-contain [mix-blend-mode:screen] group-hover:brightness-110 transition-all duration-200"
+                className="rounded-full object-cover"
+                style={{ height: "64px", width: "64px" }}
               />
             </Link>
             <p className="font-body text-flow-muted text-sm leading-relaxed max-w-xs">
