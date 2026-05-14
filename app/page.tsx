@@ -15,26 +15,26 @@ const programs = [
   {
     title:       "Brazilian Jiu-Jitsu",
     description: "Learn grappling, submissions, and positional control in a structured class environment.",
-    tags:        ["Submissions", "Guard", "Takedowns", "Gi & No-Gi"],
     href:        "/programs#bjj",
+    accent:      "orange" as const,
   },
   {
     title:       "Muay Thai",
     description: "Develop striking skills including punches, kicks, elbows, and knees while improving conditioning and technique.",
-    tags:        ["Striking", "Pad Work", "Clinch", "Conditioning"],
     href:        "/programs#muay-thai",
+    accent:      "teal" as const,
   },
   {
     title:       "Mixed Martial Arts",
     description: "Combine striking and grappling into a complete system designed for both competition and general training.",
-    tags:        ["Striking", "Grappling", "Sparring", "All Levels"],
     href:        "/programs#mma",
+    accent:      "orange" as const,
   },
   {
     title:       "Kids Classes",
     description: "Classes focused on helping kids build confidence, discipline, and fitness in a structured and supportive setting.",
-    tags:        ["Kids", "Discipline", "Fitness", "All Levels"],
     href:        "/programs#kids",
+    accent:      "teal" as const,
   },
 ];
 
@@ -51,9 +51,9 @@ export default function HomePage() {
       <Hero />
 
       {/* ── Programs ───────────────────────────────────────────────── */}
-      <section className="py-20 lg:py-24 bg-flow-black">
+      <section className="py-20 lg:py-28 bg-flow-black">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="mb-12">
+          <div className="mb-14">
             <p className="font-body font-semibold text-flow-orange uppercase tracking-widest text-xs mb-4">
               What We Offer
             </p>
@@ -61,13 +61,16 @@ export default function HomePage() {
             <h2 className="font-display text-4xl lg:text-5xl text-flow-cream leading-tight tracking-wide">
               Programs
             </h2>
+            <p className="font-body text-flow-muted text-base mt-4 max-w-xl leading-relaxed">
+              Training in Brazilian Jiu-Jitsu, Muay Thai, Mixed Martial Arts, and Kids Classes.
+            </p>
           </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 lg:gap-6">
             {programs.map((prog, i) => (
               <ProgramCard key={prog.title} {...prog} index={i} />
             ))}
           </div>
-          <div className="mt-8">
+          <div className="mt-10">
             <Link
               href="/programs"
               className="inline-flex items-center gap-2 font-body font-semibold text-sm uppercase tracking-widest text-flow-muted hover:text-flow-cream transition-colors duration-150"

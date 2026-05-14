@@ -4,65 +4,74 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 
 interface ProgramCardProps {
-  title:       string;
-  description: string;
-  tags:        string[];
-  href:        string;
-  index?:      number;
+  title:        string;
+  description:  string;
+  href:         string;
+  accent?:      "orange" | "teal";
+  index?:       number;
+}
+
+function ImagePlaceholder({ accent }: { accent: "orange" | "teal" }) {
+  const borderCls = accent === "teal"
+    ? "border-flow-teal/20"
+    : "border-flow-orange/20";
+
+  return (
+    <div
+      className={`relative w-full h-60 sm:h-72 bg-[#111318] border-b ${borderCls} flex items-center justify-center select-none`}
+    >
+      <div className="flex flex-col items-center gap-3">
+        <svg
+          width="40" height="40" viewBox="0 0 40 40" fill="none"
+          className="text-white/10"
+        >
+          <rect x="2" y="8" width="36" height="24" rx="4" stroke="currentColor" strokeWidth="1.5" />
+          <circle cx="20" cy="20" r="6" stroke="currentColor" strokeWidth="1.5" />
+          <path d="M13 8l2.5-4h9L27 8" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
+        </svg>
+        <span className="font-body text-[10px] uppercase tracking-[0.18em] text-white/20">
+          Image coming soon
+        </span>
+      </div>
+    </div>
+  );
 }
 
 export default function ProgramCard({
   title,
   description,
-  tags,
   href,
-  index = 0,
+  accent  = "orange",
+  index   = 0,
 }: ProgramCardProps) {
+  const cardBorder  = accent === "teal" ? "border-flow-teal/20 hover:border-flow-teal/45" : "border-flow-orange/20 hover:border-flow-orange/45";
+  const hoverShadow = accent === "teal"
+    ? "hover:shadow-[0_8px_48px_rgba(22,199,217,0.10)]"
+    : "hover:shadow-[0_8px_48px_rgba(215,122,31,0.10)]";
+
   return (
     <motion.div
-      initial={{ opacity: 0, y: 20 }}
+      initial={{ opacity: 0, y: 24 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
-      transition={{ duration: 0.4, delay: index * 0.08 }}
+      transition={{ duration: 0.45, delay: index * 0.08 }}
+      className="h-full"
     >
       <Link
         href={href}
-        className="group flex flex-col h-full bg-flow-card border border-white/8 rounded-sm p-6 hover:border-flow-teal/40 hover:shadow-[0_8px_40px_rgba(22,199,217,0.10)] transition-all duration-200"
+        className={`group flex flex-col h-full bg-flow-card border ${cardBorder} ${hoverShadow} rounded-2xl overflow-hidden transition-all duration-300`}
       >
-        {/* Orange accent top bar */}
-        <div className="w-6 h-0.5 bg-flow-orange mb-5 group-hover:w-10 transition-all duration-300" />
+        <ImagePlaceholder accent={accent} />
 
-        <h3 className="font-display text-xl text-flow-cream leading-tight tracking-wide mb-3 group-hover:text-flow-orange transition-colors duration-150">
-          {title}
-        </h3>
-
-        <p className="font-body text-flow-muted text-sm leading-relaxed flex-1 mb-5">
-          {description}
-        </p>
-
-        <div className="flex flex-wrap gap-1.5 mb-6">
-          {tags.map((tag) => (
-            <span
-              key={tag}
-              className="px-2.5 py-1 text-xs font-body text-flow-muted/60 border border-white/10 rounded-sm"
-            >
-              {tag}
-            </span>
-          ))}
+        <div className="p-6 flex flex-col flex-1">
+          <div className="w-6 h-0.5 bg-flow-orange mb-4 group-hover:w-10 transition-all duration-300" />
+          <h3 className="font-display text-xl text-flow-cream leading-tight tracking-wide mb-3 group-hover:text-flow-orange transition-colors duration-200">
+            {title}
+          </h3>
+          <p className="font-body text-flow-muted text-sm leading-relaxed flex-1">
+            {description}
+          </p>
         </div>
-
-        <span className="flex items-center gap-2 font-body font-semibold text-xs uppercase tracking-widest text-flow-teal group-hover:gap-3 transition-all duration-200">
-          Learn more
-          <svg className="w-3.5 h-3.5" viewBox="0 0 14 14" fill="none">
-            <path
-              d="M2.5 7h9M8 3.5L11.5 7 8 10.5"
-              stroke="currentColor"
-              strokeWidth="1.4"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            />
-          </svg>
-        </span>
       </Link>
     </motion.div>
   );

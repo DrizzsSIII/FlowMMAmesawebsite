@@ -14,118 +14,59 @@ const programs = [
     id:      "bjj",
     title:   "Brazilian Jiu-Jitsu",
     tagline: "Grappling & Submissions",
-    whoFor:  [
-      "Beginners with no martial arts background",
-      "Wrestlers or judoka looking to add submissions",
-      "Those interested in grappling competition",
-    ],
-    learn: [
-      "Guard passing and retention",
-      "Joint locks and choke submissions",
-      "Positional control (mount, back, side control)",
-      "Takedowns and trips",
-    ],
-    structure: [
-      "Warmup & drills — 15 min",
-      "Technique instruction — 25 min",
-      "Positional drilling — 15 min",
-      "Live rolling — 20 min",
-    ],
-    desc: "Brazilian Jiu-Jitsu classes at Flow MMA Academy focus on grappling, submissions, and positional control. Classes are structured for all skill levels in a consistent training environment.",
+    desc:    "Learn grappling, submissions, and positional control in a structured class environment.",
+    accent:  "orange" as const,
   },
   {
     id:      "muay-thai",
     title:   "Muay Thai",
     tagline: "Stand-Up Striking",
-    whoFor:  [
-      "Anyone wanting to develop striking skills",
-      "Boxers or kickboxers expanding their game",
-      "Athletes looking to improve conditioning",
-    ],
-    learn: [
-      "Punches, elbows, kicks, and knees",
-      "Footwork and movement",
-      "Clinch fighting and sweeps",
-      "Pad work and bag training",
-    ],
-    structure: [
-      "Jump rope & shadow boxing — 10 min",
-      "Technique & pad rounds — 30 min",
-      "Bag and partner drills — 15 min",
-      "Sparring or clinch (optional) — 15 min",
-    ],
-    desc: "Muay Thai classes at Flow MMA Academy focus on striking technique using punches, kicks, elbows, and knees. Classes include pad work, bag training, and conditioning.",
+    desc:    "Develop striking skills including punches, kicks, elbows, and knees while improving conditioning and technique.",
+    accent:  "teal" as const,
   },
   {
     id:      "mma",
     title:   "Mixed Martial Arts",
     tagline: "Striking & Grappling Combined",
-    whoFor:  [
-      "Beginners looking for a full-body training program",
-      "Athletes wanting to develop fighting skills",
-      "Those training for competition",
-    ],
-    learn: [
-      "Striking fundamentals (punches, kicks, elbows, knees)",
-      "Takedowns and clinch wrestling",
-      "Ground work and submission defense",
-      "Live sparring (optional)",
-    ],
-    structure: [
-      "Warmup & conditioning — 15 min",
-      "Technical drilling — 25 min",
-      "Situational training — 15 min",
-      "Live sparring (optional) — 20 min",
-    ],
-    desc: "MMA classes at Flow MMA Academy combine striking and grappling into a structured training program. Classes are open to all skill levels.",
+    desc:    "Combine striking and grappling into a complete system designed for both competition and general training.",
+    accent:  "orange" as const,
   },
   {
     id:      "kids",
     title:   "Kids Classes",
     tagline: "Martial Arts for Kids",
-    whoFor:  [
-      "Children with no prior martial arts experience",
-      "Kids looking for structure and physical activity",
-      "Young athletes in a supervised training environment",
-    ],
-    learn: [
-      "Basic strikes and movement",
-      "Takedowns and safe grappling",
-      "Focus, listening, and respect",
-      "Physical fitness and coordination",
-    ],
-    structure: [
-      "Games & warmup — 10 min",
-      "Technique instruction — 20 min",
-      "Drills and games — 20 min",
-      "Cool-down — 10 min",
-    ],
-    desc: "Kids classes at Flow MMA Academy focus on helping children build confidence, discipline, and fitness in a structured and supportive setting.",
+    desc:    "Classes focused on helping kids build confidence, discipline, and fitness in a structured and supportive setting.",
+    accent:  "teal" as const,
   },
 ];
 
-function InfoBlock({
-  title,
-  items,
-  marker,
-}: {
-  title: string;
-  items: string[];
-  marker: string;
-}) {
+function ProgramImage({ accent }: { accent: "orange" | "teal" }) {
+  const border = accent === "teal" ? "border-flow-teal/20" : "border-flow-orange/20";
+  const glow   = accent === "teal"
+    ? "shadow-[0_8px_48px_rgba(22,199,217,0.08)]"
+    : "shadow-[0_8px_48px_rgba(215,122,31,0.08)]";
+
   return (
-    <div className="bg-flow-card border border-white/8 rounded-sm p-6">
-      <h3 className="font-body font-semibold text-xs uppercase tracking-widest text-flow-teal mb-4">
-        {title}
-      </h3>
-      <ul className="flex flex-col gap-2.5">
-        {items.map((item) => (
-          <li key={item} className="flex items-start gap-3 font-body text-sm text-flow-muted">
-            <span className="text-flow-orange mt-0.5 shrink-0 text-xs">{marker}</span>
-            {item}
-          </li>
-        ))}
-      </ul>
+    <div
+      className={`relative w-full h-[320px] lg:h-[460px] rounded-2xl overflow-hidden border ${border} ${glow} bg-[#0a0a0a] flex items-center justify-center select-none`}
+    >
+      {/* Subtle gradient overlay for depth */}
+      <div className="absolute inset-0 bg-gradient-to-br from-white/[0.02] to-transparent pointer-events-none" />
+
+      <div className="flex flex-col items-center gap-4 relative z-10">
+        <svg
+          width="52" height="52" viewBox="0 0 52 52" fill="none"
+          className="text-white/10"
+        >
+          <rect x="3" y="10" width="46" height="32" rx="6" stroke="currentColor" strokeWidth="1.5" />
+          <circle cx="26" cy="26" r="8" stroke="currentColor" strokeWidth="1.5" />
+          <path d="M17 10l3.5-6h11l3.5 6" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
+          <circle cx="42" cy="16" r="2.5" stroke="currentColor" strokeWidth="1.5" />
+        </svg>
+        <span className="font-body text-[11px] uppercase tracking-[0.2em] text-white/20">
+          Image coming soon
+        </span>
+      </div>
     </div>
   );
 }
@@ -136,63 +77,63 @@ export default function ProgramsPage() {
       <PageHeader
         eyebrow="Train at Flow MMA"
         title="PROGRAMS"
-        description="Four disciplines. All skill levels welcome. Whether you're a complete beginner or prepping for competition — we have the right class for you."
+        description="Training in Brazilian Jiu-Jitsu, Muay Thai, Mixed Martial Arts, and Kids Classes."
       />
 
-      {programs.map((prog, i) => (
-        <section
-          key={prog.id}
-          id={prog.id}
-          className={`py-20 lg:py-24 border-b border-white/8 ${
-            i % 2 === 0 ? "bg-flow-black" : "bg-flow-dark"
-          }`}
-        >
-          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-start">
-              {/* Text side */}
-              <div className={i % 2 !== 0 ? "lg:order-2" : ""}>
-                <div className="w-10 h-0.5 bg-gradient-to-r from-flow-orange to-flow-sunset mb-5" />
-                <p className="font-body font-semibold text-flow-teal uppercase tracking-widest text-sm mb-2">
-                  {prog.tagline}
-                </p>
-                <h2 className="font-display text-4xl lg:text-5xl text-flow-cream leading-tight mb-6">
-                  {prog.title.toUpperCase()}
-                </h2>
-                <p className="font-body text-flow-muted text-base leading-relaxed mb-8 max-w-lg">
-                  {prog.desc}
-                </p>
-                <Link
-                  href="/contact"
-                  className="inline-flex items-center px-7 py-3.5 bg-flow-orange hover:bg-flow-orange-hover text-flow-black font-body font-bold uppercase tracking-wider text-sm rounded-sm transition-all duration-150 shadow-orange hover:shadow-orange-lg"
-                >
-                  Get Started
-                </Link>
-              </div>
+      {programs.map((prog, i) => {
+        const isEven      = i % 2 === 0;
+        const sectionBg   = isEven ? "bg-flow-black" : "bg-flow-dark";
+        const sectionBorder = prog.accent === "teal" ? "border-flow-teal/10" : "border-flow-orange/10";
+        const accentLine  = prog.accent === "teal" ? "bg-flow-teal" : "bg-flow-orange";
+        const taglineClr  = prog.accent === "teal" ? "text-flow-teal" : "text-flow-orange";
 
-              {/* Detail cards */}
-              <div className={`flex flex-col gap-4 ${i % 2 !== 0 ? "lg:order-1" : ""}`}>
-                <InfoBlock title="Who It's For"       items={prog.whoFor}    marker="✓" />
-                <InfoBlock title="What You'll Learn"  items={prog.learn}     marker="→" />
-                <div className="bg-flow-card border border-white/8 rounded-sm p-6">
-                  <h3 className="font-body font-semibold text-xs uppercase tracking-widest text-flow-teal mb-4">
-                    Class Structure
-                  </h3>
-                  <div className="flex flex-col gap-3">
-                    {prog.structure.map((step, idx) => (
-                      <div key={step} className="flex items-center gap-3">
-                        <span className="w-5 h-5 rounded-sm bg-flow-orange/15 border border-flow-orange/25 flex items-center justify-center font-display text-flow-orange text-xs shrink-0">
-                          {idx + 1}
-                        </span>
-                        <span className="font-body text-flow-muted text-sm">{step}</span>
-                      </div>
-                    ))}
+        return (
+          <section
+            key={prog.id}
+            id={prog.id}
+            className={`py-20 lg:py-28 border-b ${sectionBorder} ${sectionBg}`}
+          >
+            <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
+
+                {/* Image — left on even rows, right on odd rows */}
+                <div className={isEven ? "" : "lg:order-2"}>
+                  <ProgramImage accent={prog.accent} />
+                </div>
+
+                {/* Text */}
+                <div className={isEven ? "" : "lg:order-1"}>
+                  <div className={`w-10 h-0.5 ${accentLine} mb-5`} />
+                  <p className={`font-body font-semibold text-xs uppercase tracking-widest ${taglineClr} mb-3`}>
+                    {prog.tagline}
+                  </p>
+                  <h2 className="font-display text-4xl lg:text-5xl text-flow-cream leading-tight tracking-wide mb-6">
+                    {prog.title.toUpperCase()}
+                  </h2>
+                  <p className="font-body text-flow-muted text-base lg:text-lg leading-relaxed mb-10 max-w-lg">
+                    {prog.desc}
+                  </p>
+                  <div className="flex flex-wrap gap-3">
+                    <Link
+                      href="/contact"
+                      className="inline-flex items-center px-7 py-3.5 bg-flow-orange hover:bg-flow-orange-hover text-flow-black font-body font-bold uppercase tracking-wider text-sm rounded-sm transition-all duration-150 shadow-orange hover:shadow-orange-lg"
+                    >
+                      Contact Us
+                    </Link>
+                    <Link
+                      href="/schedule"
+                      className="inline-flex items-center px-7 py-3.5 border border-white/15 hover:border-flow-teal/50 text-flow-cream/70 hover:text-flow-cream font-body font-semibold uppercase tracking-wider text-sm rounded-sm transition-colors duration-150"
+                    >
+                      View Schedule
+                    </Link>
                   </div>
                 </div>
+
               </div>
             </div>
-          </div>
-        </section>
-      ))}
+          </section>
+        );
+      })}
 
       <CTASection
         headline="Find your program."
