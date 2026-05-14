@@ -6,8 +6,7 @@ import { BOOKING_URL } from "@/lib/site";
 
 export default function Hero() {
   return (
-    <section className="relative min-h-screen flex flex-col justify-center overflow-hidden bg-flow-black">
-
+    <section className="relative flex min-h-screen flex-col justify-center overflow-hidden bg-flow-black">
       {/* Background */}
       <div className="absolute inset-0">
         <div
@@ -19,28 +18,28 @@ export default function Hero() {
         <div className="absolute inset-0 bg-gradient-to-b from-flow-black/90 via-flow-black/85 to-flow-black" />
       </div>
 
-      <div className="absolute left-1/2 top-1/3 -translate-x-1/2 w-[min(90vw,520px)] h-[min(90vw,520px)] rounded-full bg-flow-orange/6 blur-[120px] pointer-events-none" />
+      <div className="pointer-events-none absolute left-1/2 top-1/3 h-[min(90vw,520px)] w-[min(90vw,520px)] -translate-x-1/2 rounded-full bg-flow-orange/6 blur-[120px]" />
 
-      <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pt-28 pb-24 lg:pt-36 lg:pb-32 text-center">
+      <div className="relative z-10 mx-auto max-w-4xl px-4 pb-24 pt-28 text-center sm:px-6 lg:px-8 lg:pb-32 lg:pt-32">
         <motion.div
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.55 }}
-          className="flex justify-center mb-8 lg:mb-10"
+          className="mb-8 flex justify-center lg:mb-10"
         >
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
             src="/images/logoimagewithnobackground.png"
             alt="Flow MMA Academy"
-            className="mx-auto h-44 sm:h-56 md:h-72 lg:h-96 w-auto max-w-[min(92vw,520px)] object-contain drop-shadow-[0_0_28px_rgba(22,199,217,0.25)]"
+            className="mx-auto h-auto w-auto max-h-[min(60vh,32rem)] max-w-[min(94vw,38rem)] object-contain sm:max-h-[min(58vh,34rem)] md:max-h-[min(56vh,36rem)] lg:max-h-[min(52vh,38rem)]"
           />
         </motion.div>
 
         <motion.h1
           initial={{ opacity: 0, y: 12 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.45, delay: 0.12 }}
-          className="font-display text-2xl sm:text-3xl md:text-4xl text-flow-cream tracking-wide leading-tight mb-4"
+          transition={{ duration: 0.45, delay: 0.1 }}
+          className="mb-4 font-display text-2xl leading-tight tracking-wide text-flow-cream sm:text-3xl md:text-4xl"
         >
           Mixed Martial Arts Training in Mesa, Arizona
         </motion.h1>
@@ -48,17 +47,17 @@ export default function Hero() {
         <motion.p
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.4, delay: 0.16 }}
-          className="font-body font-semibold text-flow-orange text-sm sm:text-base tracking-wide mb-3"
+          transition={{ duration: 0.4, delay: 0.14 }}
+          className="mb-4 font-body text-sm font-semibold tracking-wide text-flow-orange sm:text-base"
         >
-          Free trial
+          Limited Offer: 5 Day Bootcamp
         </motion.p>
 
         <motion.p
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.4, delay: 0.2 }}
-          className="font-body text-flow-muted text-sm sm:text-base max-w-md mx-auto leading-relaxed mb-10"
+          transition={{ duration: 0.4, delay: 0.18 }}
+          className="mx-auto mb-10 max-w-md font-body text-sm leading-relaxed text-flow-muted sm:text-base"
         >
           Brazilian Jiu-Jitsu, Muay Thai, and MMA training in Mesa, Arizona.
         </motion.p>
@@ -66,20 +65,20 @@ export default function Hero() {
         <motion.div
           initial={{ opacity: 0, y: 12 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.45, delay: 0.28 }}
-          className="flex flex-col sm:flex-row gap-3 justify-center items-stretch sm:items-center"
+          transition={{ duration: 0.45, delay: 0.24 }}
+          className="flex flex-col items-stretch justify-center gap-3 sm:flex-row sm:items-center"
         >
           <a
             href={BOOKING_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center justify-center px-8 py-4 bg-flow-orange hover:bg-flow-orange-hover text-flow-black font-body font-bold uppercase tracking-wider text-sm rounded-sm transition-colors duration-150 shadow-orange hover:shadow-orange-lg"
+            className="inline-flex items-center justify-center rounded-sm bg-flow-orange px-8 py-4 font-body text-sm font-bold uppercase tracking-wider text-flow-black shadow-orange transition-colors duration-150 hover:bg-flow-orange-hover hover:shadow-orange-lg"
           >
             Train With Us
           </a>
           <Link
             href="/schedule"
-            className="inline-flex items-center justify-center px-8 py-4 border border-white/20 hover:border-flow-teal/60 text-flow-cream/90 hover:text-flow-cream font-body font-semibold uppercase tracking-wider text-sm rounded-sm transition-colors duration-150"
+            className="inline-flex items-center justify-center rounded-sm border border-white/20 px-8 py-4 font-body text-sm font-semibold uppercase tracking-wider text-flow-cream/90 transition-colors duration-150 hover:border-flow-teal/60 hover:text-flow-cream"
           >
             View Schedule
           </Link>
@@ -95,7 +94,7 @@ export default function Hero() {
         <motion.div
           animate={{ y: [0, 6, 0] }}
           transition={{ repeat: Infinity, duration: 2, ease: "easeInOut" }}
-          className="w-px h-8 bg-gradient-to-b from-flow-orange/50 to-transparent mx-auto"
+          className="mx-auto h-8 w-px bg-gradient-to-b from-flow-orange/50 to-transparent"
         />
       </motion.div>
     </section>

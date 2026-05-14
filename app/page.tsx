@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import Hero from "@/components/Hero";
 import ProgramLogoCard from "@/components/ProgramLogoCard";
-import ProgramsSharedCTA from "@/components/ProgramsSharedCTA";
 import CTASection from "@/components/CTASection";
 import ScheduleImageBlock from "@/components/ScheduleImageBlock";
 import Link from "next/link";
@@ -13,21 +12,6 @@ export const metadata: Metadata = {
   description:
     "Flow MMA Academy offers MMA, Brazilian Jiu-Jitsu, Muay Thai, and Kids Classes in Mesa, AZ.",
 };
-
-const trainingBlocks = [
-  {
-    title: "Classes in Mesa",
-    desc:  "Flow MMA Academy offers martial arts training in Mesa, Arizona. Classes are available in MMA, Brazilian Jiu-Jitsu, Muay Thai, and Kids programs. Training includes Brazilian Jiu-Jitsu, Muay Thai, and Mixed Martial Arts.",
-  },
-  {
-    title: "Training environment",
-    desc:  "Flow MMA Academy focuses on a structured, supportive training environment.",
-  },
-  {
-    title: "Coaching & facility",
-    desc:  "Coach information coming soon. Facility details coming soon.",
-  },
-];
 
 export default function HomePage() {
   return (
@@ -55,44 +39,35 @@ export default function HomePage() {
             ))}
           </div>
 
-          <div className="mt-14 border-t border-white/8 pt-14 lg:mt-16 lg:pt-16">
-            <ProgramsSharedCTA variant="compact" />
-            <p className="mt-10 text-center">
-              <Link
-                href="/programs"
-                className="font-body text-sm font-semibold uppercase tracking-widest text-flow-teal transition-colors duration-150 hover:text-flow-cream"
-              >
-                Full programs page
-              </Link>
-            </p>
-          </div>
+          <p className="mt-14 text-center lg:mt-16">
+            <Link
+              href="/programs"
+              className="font-body text-sm font-semibold uppercase tracking-widest text-flow-teal transition-colors duration-150 hover:text-flow-cream"
+            >
+              Full programs page
+            </Link>
+          </p>
         </div>
       </section>
 
       <section className="border-t border-white/8 bg-flow-dark py-20 lg:py-32">
         <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-          <header className="mb-14 lg:mb-20">
+          <header className="mb-10 max-w-3xl lg:mb-12">
             <p className="mb-4 font-body text-xs font-semibold uppercase tracking-widest text-flow-teal">
               Mesa, Arizona
             </p>
             <div className="mb-5 h-0.5 w-10 bg-flow-teal" />
-            <h2 className="font-display max-w-3xl text-4xl leading-tight tracking-wide text-flow-cream sm:text-5xl lg:text-6xl">
+            <h2 className="font-display text-4xl leading-tight tracking-wide text-flow-cream sm:text-5xl lg:text-6xl">
               Training at Flow MMA
             </h2>
           </header>
 
-          <div className="grid grid-cols-1 gap-10 lg:grid-cols-3 lg:gap-12">
-            {trainingBlocks.map((block) => (
-              <div key={block.title} className="border-t border-white/10 pt-8">
-                <div className="mb-5 h-0.5 w-8 bg-flow-orange" />
-                <h3 className="font-display mb-3 text-xl tracking-wide text-flow-cream">
-                  {block.title}
-                </h3>
-                <p className="font-body text-sm leading-relaxed text-flow-muted">
-                  {block.desc}
-                </p>
-              </div>
-            ))}
+          <div className="max-w-3xl space-y-6 font-body text-base leading-relaxed text-flow-muted lg:text-lg">
+            <p className="text-flow-cream/95">
+              Flow MMA Academy offers martial arts training in Mesa, Arizona with classes in Brazilian
+              Jiu-Jitsu, Muay Thai, MMA, and Kids programs.
+            </p>
+            <p>Flow MMA Academy focuses on a structured, supportive training environment.</p>
           </div>
         </div>
       </section>
@@ -135,7 +110,7 @@ export default function HomePage() {
 
       <CTASection
         headline="Train With Us"
-        subtext="Free trial"
+        subtext="Limited Offer: 5 Day Bootcamp"
         ctaLabel="Book A Free Class Today"
         ctaHref={BOOKING_URL}
         secondaryCtaLabel="View Schedule"

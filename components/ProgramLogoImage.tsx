@@ -17,11 +17,11 @@ export default function ProgramLogoImage({ src, alt, className = "" }: ProgramLo
   if (failed) {
     return (
       <div
-        className={`flex min-h-[12rem] w-full items-center justify-center rounded-xl border border-white/10 bg-transparent ${className}`}
+        className={`flex h-full min-h-[10rem] w-full flex-col items-center justify-center rounded-xl border border-white/10 bg-[#0a0a0a]/80 px-4 ${className}`}
         role="img"
         aria-label={alt}
       >
-        <p className="font-body px-6 text-center text-sm leading-relaxed text-flow-muted/80">
+        <p className="text-center font-body text-sm leading-relaxed text-flow-muted/80">
           Program logo coming soon
         </p>
       </div>

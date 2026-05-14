@@ -29,8 +29,8 @@ export default function ProgramsPage() {
             id={program.id}
             className={`border-b ${border} ${bg} py-24 lg:py-32`}
           >
-            <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
-              <ProgramLogoCard program={program} size="page" />
+            <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+              <ProgramLogoCard program={program} size="page" splitReverse={i % 2 === 1} />
             </div>
           </section>
         );
