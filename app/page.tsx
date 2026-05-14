@@ -1,44 +1,18 @@
 import type { Metadata } from "next";
 import Hero from "@/components/Hero";
-import HomeProgramFeature from "@/components/HomeProgramFeature";
+import ProgramLogoCard from "@/components/ProgramLogoCard";
+import ProgramsSharedCTA from "@/components/ProgramsSharedCTA";
 import CTASection from "@/components/CTASection";
 import ScheduleImageBlock from "@/components/ScheduleImageBlock";
 import Link from "next/link";
 import { BOOKING_URL } from "@/lib/site";
+import { PROGRAMS } from "@/lib/programs";
 
 export const metadata: Metadata = {
   title: "Flow MMA Academy | MMA Gym Mesa AZ — BJJ, Muay Thai, MMA",
   description:
     "Flow MMA Academy offers MMA, Brazilian Jiu-Jitsu, Muay Thai, and Kids Classes in Mesa, AZ.",
 };
-
-const programs = [
-  {
-    title:       "Brazilian Jiu-Jitsu",
-    description: "Learn grappling, submissions, and positional control in a structured class environment.",
-    href:        "/programs#bjj",
-    accent:      "orange" as const,
-  },
-  {
-    title:       "Muay Thai",
-    description: "Develop striking skills including punches, kicks, elbows, and knees while improving conditioning and technique.",
-    href:        "/programs#muay-thai",
-    accent:      "teal" as const,
-    linkLabel:   "Learn more",
-  },
-  {
-    title:       "Mixed Martial Arts",
-    description: "Combine striking and grappling into a complete system designed for both competition and general training.",
-    href:        "/programs#mma",
-    accent:      "orange" as const,
-  },
-  {
-    title:       "Kids Classes",
-    description: "Classes focused on helping kids build confidence, discipline, and fitness in a structured and supportive setting.",
-    href:        "/programs#kids",
-    accent:      "teal" as const,
-  },
-];
 
 const trainingBlocks = [
   {
@@ -60,72 +34,61 @@ export default function HomePage() {
     <>
       <Hero />
 
-      {/* ── Programs (editorial) ─────────────────────────────────── */}
-      <section className="py-20 lg:py-32 bg-flow-black border-t border-white/6">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <header className="mb-16 lg:mb-20 max-w-2xl">
-            <p className="font-body font-semibold text-flow-orange uppercase tracking-widest text-xs mb-4">
+      <section className="border-t border-white/6 bg-flow-black py-20 lg:py-32">
+        <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+          <header className="mb-12 max-w-2xl lg:mb-16">
+            <p className="mb-4 font-body text-xs font-semibold uppercase tracking-widest text-flow-orange">
               Training
             </p>
-            <div className="w-10 h-0.5 bg-flow-orange mb-5" />
-            <h2 className="font-display text-4xl sm:text-5xl lg:text-6xl text-flow-cream leading-tight tracking-wide">
+            <div className="mb-5 h-0.5 w-10 bg-flow-orange" />
+            <h2 className="font-display text-4xl leading-tight tracking-wide text-flow-cream sm:text-5xl lg:text-6xl">
               Programs
             </h2>
-            <p className="font-body text-flow-muted text-base sm:text-lg mt-5 leading-relaxed">
+            <p className="mt-5 font-body text-base leading-relaxed text-flow-muted sm:text-lg">
               Brazilian Jiu-Jitsu, Muay Thai, Mixed Martial Arts, and Kids Classes.
             </p>
           </header>
 
-          <div className="flex flex-col gap-16 lg:gap-24">
-            {programs.map((prog, i) => (
-              <HomeProgramFeature
-                key={prog.title}
-                title={prog.title}
-                description={prog.description}
-                href={prog.href}
-                accent={prog.accent}
-                imageRight={i % 2 === 1}
-                index={i}
-                linkLabel={prog.linkLabel}
-              />
+          <div className="grid grid-cols-1 gap-6 md:grid-cols-2 md:gap-8 xl:grid-cols-4 xl:gap-7">
+            {PROGRAMS.map((program) => (
+              <ProgramLogoCard key={program.id} program={program} size="home" />
             ))}
           </div>
 
-          <div className="mt-14 lg:mt-20">
-            <Link
-              href="/programs"
-              className="inline-flex items-center gap-2 font-body font-semibold text-sm uppercase tracking-widest text-flow-teal hover:text-flow-cream transition-colors duration-150"
-            >
-              Full programs page
-              <svg className="w-3.5 h-3.5" viewBox="0 0 14 14" fill="none" aria-hidden>
-                <path d="M2.5 7h9M8 3.5L11.5 7 8 10.5" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round" />
-              </svg>
-            </Link>
+          <div className="mt-14 border-t border-white/8 pt-14 lg:mt-16 lg:pt-16">
+            <ProgramsSharedCTA variant="compact" />
+            <p className="mt-10 text-center">
+              <Link
+                href="/programs"
+                className="font-body text-sm font-semibold uppercase tracking-widest text-flow-teal transition-colors duration-150 hover:text-flow-cream"
+              >
+                Full programs page
+              </Link>
+            </p>
           </div>
         </div>
       </section>
 
-      {/* ── Training at Flow MMA ───────────────────────────────────── */}
-      <section className="py-20 lg:py-32 bg-flow-dark border-t border-white/8">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="border-t border-white/8 bg-flow-dark py-20 lg:py-32">
+        <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
           <header className="mb-14 lg:mb-20">
-            <p className="font-body font-semibold text-flow-teal uppercase tracking-widest text-xs mb-4">
+            <p className="mb-4 font-body text-xs font-semibold uppercase tracking-widest text-flow-teal">
               Mesa, Arizona
             </p>
-            <div className="w-10 h-0.5 bg-flow-teal mb-5" />
-            <h2 className="font-display text-4xl sm:text-5xl lg:text-6xl text-flow-cream leading-tight tracking-wide max-w-3xl">
+            <div className="mb-5 h-0.5 w-10 bg-flow-teal" />
+            <h2 className="font-display max-w-3xl text-4xl leading-tight tracking-wide text-flow-cream sm:text-5xl lg:text-6xl">
               Training at Flow MMA
             </h2>
           </header>
 
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-10 lg:gap-12">
+          <div className="grid grid-cols-1 gap-10 lg:grid-cols-3 lg:gap-12">
             {trainingBlocks.map((block) => (
               <div key={block.title} className="border-t border-white/10 pt-8">
-                <div className="w-8 h-0.5 bg-flow-orange mb-5" />
-                <h3 className="font-display text-xl text-flow-cream tracking-wide mb-3">
+                <div className="mb-5 h-0.5 w-8 bg-flow-orange" />
+                <h3 className="font-display mb-3 text-xl tracking-wide text-flow-cream">
                   {block.title}
                 </h3>
-                <p className="font-body text-flow-muted text-sm leading-relaxed">
+                <p className="font-body text-sm leading-relaxed text-flow-muted">
                   {block.desc}
                 </p>
               </div>
@@ -134,38 +97,37 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ── Class Schedule (major visual) ────────────────────────── */}
-      <section className="py-20 lg:py-36 bg-flow-black border-t border-white/8">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 mb-12 lg:mb-14">
+      <section className="border-t border-white/8 bg-flow-black py-20 lg:py-36">
+        <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+          <div className="mb-12 flex flex-col gap-6 lg:mb-14 lg:flex-row lg:items-end lg:justify-between">
             <div>
-              <p className="font-body font-semibold text-flow-orange uppercase tracking-widest text-xs mb-4">
+              <p className="mb-4 font-body text-xs font-semibold uppercase tracking-widest text-flow-orange">
                 Weekly training
               </p>
-              <div className="w-10 h-0.5 bg-flow-orange mb-5" />
-              <h2 className="font-display text-4xl sm:text-5xl lg:text-6xl text-flow-cream leading-tight tracking-wide">
+              <div className="mb-5 h-0.5 w-10 bg-flow-orange" />
+              <h2 className="font-display text-4xl leading-tight tracking-wide text-flow-cream sm:text-5xl lg:text-6xl">
                 Class Schedule
               </h2>
-              <p className="font-body text-flow-muted text-base mt-4 max-w-lg">
+              <p className="mt-4 max-w-lg font-body text-base text-flow-muted">
                 View our current weekly training schedule
               </p>
             </div>
             <Link
               href="/schedule"
-              className="inline-flex items-center gap-2 font-body font-semibold text-sm uppercase tracking-widest text-flow-teal hover:text-flow-cream transition-colors duration-150 shrink-0"
+              className="inline-flex shrink-0 items-center gap-2 font-body text-sm font-semibold uppercase tracking-widest text-flow-teal transition-colors duration-150 hover:text-flow-cream"
             >
               Open schedule page
-              <svg className="w-3.5 h-3.5" viewBox="0 0 14 14" fill="none" aria-hidden>
+              <svg className="h-3.5 w-3.5" viewBox="0 0 14 14" fill="none" aria-hidden>
                 <path d="M2.5 7h9M8 3.5L11.5 7 8 10.5" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round" />
               </svg>
             </Link>
           </div>
 
-          <div className="relative rounded-2xl overflow-hidden border border-flow-orange/35 ring-1 ring-flow-teal/20 shadow-[0_24px_80px_rgba(0,0,0,0.55)]">
-            <div className="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-flow-orange via-flow-teal to-flow-orange z-10 pointer-events-none" />
+          <div className="relative overflow-hidden rounded-2xl border border-flow-orange/35 shadow-[0_24px_80px_rgba(0,0,0,0.55)] ring-1 ring-flow-teal/20">
+            <div className="pointer-events-none absolute inset-x-0 top-0 z-10 h-1 bg-gradient-to-r from-flow-orange via-flow-teal to-flow-orange" />
             <ScheduleImageBlock />
           </div>
-          <p className="font-body text-flow-muted/50 text-xs sm:text-sm mt-5 text-center lg:text-left">
+          <p className="mt-5 text-center font-body text-xs text-flow-muted/50 sm:text-sm lg:text-left">
             Schedule subject to change. Contact us for latest updates.
           </p>
         </div>
