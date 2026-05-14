@@ -63,7 +63,7 @@ export default function Hero() {
             href="/contact"
             className="inline-flex items-center justify-center px-8 py-4 bg-flow-orange hover:bg-flow-orange-hover text-flow-black font-body font-bold uppercase tracking-wider text-sm rounded-sm transition-colors duration-150 shadow-orange hover:shadow-orange-lg"
           >
-            Get Started
+            Train With Us
           </Link>
           <Link
             href="/schedule"

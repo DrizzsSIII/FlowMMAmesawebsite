@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
+import SocialLinks from "@/components/SocialLinks";
 
 const navLinks = [
   { label: "Programs", href: "/programs" },
@@ -46,26 +47,29 @@ export default function Navbar() {
           />
         </Link>
 
-        {/* Desktop links */}
-        <div className="hidden lg:flex items-center gap-7">
-          {navLinks.map((link) => (
-            <Link
-              key={link.href}
-              href={link.href}
-              className={`font-body font-semibold text-sm uppercase tracking-widest transition-colors duration-150 ${
-                pathname === link.href
-                  ? "text-flow-orange"
-                  : "text-flow-cream/70 hover:text-flow-cream"
-              }`}
-            >
-              {link.label}
-            </Link>
-          ))}
+        {/* Desktop links + social + CTA */}
+        <div className="hidden lg:flex items-center gap-6 xl:gap-7 flex-1 justify-end min-w-0">
+          <div className="flex items-center gap-6 xl:gap-7 shrink-0">
+            {navLinks.map((link) => (
+              <Link
+                key={link.href}
+                href={link.href}
+                className={`font-body font-semibold text-sm uppercase tracking-widest transition-colors duration-150 ${
+                  pathname === link.href
+                    ? "text-flow-orange"
+                    : "text-flow-cream/70 hover:text-flow-cream"
+                }`}
+              >
+                {link.label}
+              </Link>
+            ))}
+          </div>
+          <SocialLinks className="shrink-0 ml-1" />
           <Link
             href="/contact"
-            className="ml-3 px-5 py-2.5 bg-flow-orange hover:bg-flow-orange-hover text-flow-black font-body font-bold text-sm uppercase tracking-wider rounded-sm transition-all duration-150 shadow-orange hover:shadow-orange-lg"
+            className="shrink-0 px-5 py-2.5 bg-flow-orange hover:bg-flow-orange-hover text-flow-black font-body font-bold text-sm uppercase tracking-wider rounded-sm transition-all duration-150 shadow-orange hover:shadow-orange-lg"
           >
-            Get Started
+            Train With Us
           </Link>
         </div>
 
@@ -117,11 +121,14 @@ export default function Navbar() {
                   {link.label}
                 </Link>
               ))}
+              <div className="flex justify-center mt-5">
+                <SocialLinks />
+              </div>
               <Link
                 href="/contact"
-                className="mt-5 text-center px-6 py-4 bg-flow-orange hover:bg-flow-orange-hover text-flow-black font-body font-bold uppercase tracking-wider text-base rounded-sm transition-colors duration-150"
+                className="mt-4 text-center px-6 py-4 bg-flow-orange hover:bg-flow-orange-hover text-flow-black font-body font-bold uppercase tracking-wider text-base rounded-sm transition-colors duration-150"
               >
-                Get Started
+                Train With Us
               </Link>
             </div>
           </motion.div>

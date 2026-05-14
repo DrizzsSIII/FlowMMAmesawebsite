@@ -106,7 +106,7 @@ export default function ProgramsPage() {
                       href="/contact"
                       className="inline-flex items-center px-7 py-3.5 bg-flow-orange hover:bg-flow-orange-hover text-flow-black font-body font-bold uppercase tracking-wider text-sm rounded-sm transition-all duration-150 shadow-orange hover:shadow-orange-lg"
                     >
-                      Contact Us
+                      Train With Us
                     </Link>
                     <Link
                       href="/schedule"
@@ -126,7 +126,7 @@ export default function ProgramsPage() {
       <CTASection
         headline="Find your program."
         subtext="Contact Flow MMA Academy to get started."
-        ctaLabel="Get Started"
+        ctaLabel="Train With Us"
       />
     </>
   );

@@ -109,7 +109,7 @@ export default function AboutPage() {
       <CTASection
         headline="Come train with us."
         subtext="Contact Flow MMA Academy to get started."
-        ctaLabel="Get Started"
+        ctaLabel="Train With Us"
       />
     </>
   );

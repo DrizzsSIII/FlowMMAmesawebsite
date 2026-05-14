@@ -1,4 +1,6 @@
 import Link from "next/link";
+import SocialLinks from "@/components/SocialLinks";
+import { SITE_ADDRESS } from "@/lib/site";
 
 const navLinks = [
   { label: "Programs", href: "/programs" },
@@ -17,13 +19,12 @@ const programs = [
 export default function Footer() {
   return (
     <footer className="bg-flow-dark border-t border-white/8">
-      {/* Top accent bar */}
       <div className="h-px bg-gradient-to-r from-flow-orange/50 via-flow-teal/50 to-flow-orange/50" />
 
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-14 lg:py-16">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
 
-          {/* Brand */}
+          {/* Brand + address + social */}
           <div className="sm:col-span-2">
             <Link href="/" className="inline-block mb-5" aria-label="Flow MMA Academy home">
               {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -33,16 +34,20 @@ export default function Footer() {
                 className="h-14 w-auto object-contain"
               />
             </Link>
-            <p className="font-body text-flow-muted text-sm leading-relaxed max-w-xs">
+            <p className="font-body text-flow-muted text-sm leading-relaxed max-w-sm mb-2">
               Mixed Martial Arts training in Mesa, Arizona.
               BJJ, Muay Thai, MMA, and Kids Classes.
             </p>
-            <p className="font-body text-flow-muted/60 text-sm mt-3">
-              Mesa, Arizona
-            </p>
+            <address className="font-body text-flow-muted/90 text-sm not-italic leading-relaxed mb-5">
+              <span className="text-flow-cream font-semibold">{SITE_ADDRESS.org}</span>
+              <br />
+              {SITE_ADDRESS.line1}
+              <br />
+              {SITE_ADDRESS.city}
+            </address>
+            <SocialLinks />
           </div>
 
-          {/* Navigate */}
           <div>
             <h3 className="font-body font-semibold uppercase tracking-widest text-xs text-flow-orange mb-5">
               Navigate
@@ -61,7 +66,6 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Programs */}
           <div>
             <h3 className="font-body font-semibold uppercase tracking-widest text-xs text-flow-teal mb-5">
               Programs
@@ -81,29 +85,10 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* Bottom bar */}
         <div className="mt-12 pt-6 border-t border-white/8 flex flex-col sm:flex-row items-center justify-between gap-3">
-          <p className="font-body text-flow-muted/40 text-xs">
+          <p className="font-body text-flow-muted/40 text-xs text-center sm:text-left">
             © {new Date().getFullYear()} Flow MMA Academy · Mesa, Arizona
           </p>
-          <div className="flex gap-5">
-            <a
-              href="https://instagram.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="font-body text-flow-muted/40 hover:text-flow-orange text-xs transition-colors duration-150"
-            >
-              Instagram
-            </a>
-            <a
-              href="https://facebook.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="font-body text-flow-muted/40 hover:text-flow-teal text-xs transition-colors duration-150"
-            >
-              Facebook
-            </a>
-          </div>
         </div>
       </div>
     </footer>

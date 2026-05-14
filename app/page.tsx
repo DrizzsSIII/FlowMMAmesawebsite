@@ -171,7 +171,7 @@ export default function HomePage() {
       <CTASection
         headline="Start training"
         subtext="Contact Flow MMA Academy to get started."
-        ctaLabel="Contact Us"
+        ctaLabel="Train With Us"
         ctaHref="/contact"
         secondaryCtaLabel="View Schedule"
         secondaryCtaHref="/schedule"

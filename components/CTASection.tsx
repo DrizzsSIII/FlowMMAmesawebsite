@@ -15,7 +15,7 @@ interface CTASectionProps {
 export default function CTASection({
   headline = "Start your training today.",
   subtext = "Contact Flow MMA Academy to get started.",
-  ctaLabel = "Get Started",
+  ctaLabel = "Train With Us",
   ctaHref = "/contact",
   secondaryCtaLabel,
   secondaryCtaHref = "/schedule",

@@ -59,7 +59,7 @@ export default function ContactForm() {
         </h3>
         <p className="font-body text-flow-muted text-sm leading-relaxed">
           Thanks, <span className="text-flow-cream">{form.name}</span>. We&apos;ll be in touch at{" "}
-          <span className="text-flow-orange">{form.email}</span> to schedule your first class.
+          <span className="text-flow-orange">{form.email}</span> soon.
         </p>
       </motion.div>
     );

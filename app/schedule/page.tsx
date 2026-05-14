@@ -15,7 +15,7 @@ export default function SchedulePage() {
       <PageHeader
         eyebrow="Plan Your Week"
         title="CLASS SCHEDULE"
-        description="View our current weekly training schedule. All classes are drop-in friendly."
+        description="View our current weekly training schedule."
       />
 
       {/* Schedule image */}
@@ -49,8 +49,8 @@ export default function SchedulePage() {
               FIRST TIME?
             </h3>
             <p className="font-body text-flow-muted text-sm leading-relaxed">
-              Arriving a few minutes early for your first class is recommended.
-              Contact Flow MMA Academy with any questions before attending.
+              Arriving a few minutes early is recommended when you attend.
+              Contact Flow MMA Academy with any questions before visiting.
             </p>
           </div>
         </div>
@@ -59,7 +59,7 @@ export default function SchedulePage() {
       <CTASection
         headline="Ready to start training?"
         subtext="Contact Flow MMA Academy to get started."
-        ctaLabel="Get Started"
+        ctaLabel="Train With Us"
       />
     </>
   );
