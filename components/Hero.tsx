@@ -50,7 +50,7 @@ export default function Hero() {
           transition={{ duration: 0.4, delay: 0.14 }}
           className="mb-4 font-body text-sm font-semibold tracking-wide text-flow-orange sm:text-base"
         >
-          Limited Offer: 5 Day Bootcamp
+          Book a free trial
         </motion.p>
 
         <motion.p

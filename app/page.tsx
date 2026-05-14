@@ -113,7 +113,7 @@ export default function HomePage() {
 
       <CTASection
         headline="Train With Us"
-        subtext="Limited Offer: 5 Day Bootcamp"
+        subtext="Book a free trial"
         ctaLabel="Book A Free Class Today"
         ctaHref={BOOKING_URL}
         secondaryCtaLabel="View Schedule"
