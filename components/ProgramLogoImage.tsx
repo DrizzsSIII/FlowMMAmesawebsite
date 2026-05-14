@@ -17,7 +17,7 @@ export default function ProgramLogoImage({ src, alt, className = "" }: ProgramLo
   if (failed) {
     return (
       <div
-        className={`flex min-h-[12rem] w-full items-center justify-center rounded-xl border border-white/10 bg-black/40 ${className}`}
+        className={`flex min-h-[12rem] w-full items-center justify-center rounded-xl border border-white/10 bg-transparent ${className}`}
         role="img"
         aria-label={alt}
       >

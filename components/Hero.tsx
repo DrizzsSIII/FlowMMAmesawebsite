@@ -51,7 +51,7 @@ export default function Hero() {
           transition={{ duration: 0.4, delay: 0.16 }}
           className="font-body font-semibold text-flow-orange text-sm sm:text-base tracking-wide mb-3"
         >
-          Limited Offer: 5 Day Bootcamp
+          Free trial
         </motion.p>
 
         <motion.p

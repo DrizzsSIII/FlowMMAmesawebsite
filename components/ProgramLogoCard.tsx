@@ -26,7 +26,7 @@ export default function ProgramLogoCard({ program, size }: ProgramLogoCardProps)
 
   return (
     <article
-      className={`group flex h-full flex-col rounded-2xl border ${border} bg-[#080808] ${pad} shadow-[0_12px_40px_rgba(0,0,0,0.35)] transition-[transform,border-color] duration-200 ease-out hover:-translate-y-1`}
+      className={`group flex h-full flex-col rounded-2xl border ${border} bg-transparent ${pad} transition-[transform,border-color] duration-200 ease-out hover:-translate-y-1`}
     >
       <div className="flex flex-1 items-center justify-center py-2">
         <ProgramLogoImage
